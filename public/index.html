@@ -90,13 +90,33 @@
         <section class="panel projects-panel" id="projects" aria-labelledby="projects-heading">
           <div class="section-heading">
             <p class="section-tag">FEATURED PROJECTS</p>
-            <h2 id="projects-heading">Project Categories</h2>
+            <h2 id="projects-heading">Selected Projects</h2>
           </div>
 
           <div class="project-list" data-project-list>
             <p class="dynamic-status">Project data is loading.</p>
           </div>
         </section>
+
+        <div class="project-dialog-backdrop" data-project-dialog hidden>
+          <div
+            class="project-dialog"
+            id="project-detail-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="project-dialog-title"
+          >
+            <button class="project-dialog-close" type="button" data-project-close aria-label="프로젝트 상세 닫기">
+              ×
+            </button>
+            <p class="project-dialog-index" data-project-dialog-index></p>
+            <h3 id="project-dialog-title" data-project-dialog-title></h3>
+            <p class="project-dialog-subtitle" data-project-dialog-subtitle></p>
+            <p class="project-dialog-overview" data-project-dialog-overview></p>
+            <ul class="project-dialog-highlights" data-project-dialog-highlights></ul>
+            <div class="project-dialog-links" data-project-dialog-links></div>
+          </div>
+        </div>
 
         <section class="split-grid">
           <article class="panel timeline-panel" id="experience">

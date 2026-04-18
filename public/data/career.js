@@ -13,11 +13,10 @@ window.__HOME_CAREER__ = [
       {
         label: "캡스톤디자인 (2025):",
         linkLabel: "AR Slope",
-        href: "https://www.notion.so/AR-Slope-2b79974dc01a80a59f74e2a3a5bdc125?source=copy_link",
+        href: "#project-arslope",
         suffix: "프로젝트 팀장",
         bullets: [
-          "현실 기반 AR 레이싱 게임 기획 및 개발 (팀장 / 메인 개발)",
-          "논문 작성 및 교외 대회 연계 활동 수행",
+          "졸업 프로젝트 ARSlope는 Projects 섹션에서 상세 내용을 확인할 수 있습니다.",
         ],
       },
     ],
