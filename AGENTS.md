@@ -26,3 +26,7 @@
 ## 로컬 문서 / ignore 파일
 - `guides/`는 로컬에 존재하고 참고용 문서를 담고 있지만, `.gitignore`로 디렉터리 전체가 무시됩니다. ignore 규칙이 바뀌지 않는 한 guide 수정사항이 커밋된다고 가정하지 마세요.
 - 이 파일을 추가하기 전에는 `AGENTS.md`, `CLAUDE.md`, Copilot, Cursor 규칙 같은 기존 repo 지침 파일이 없었습니다.
+
+## Git 규칙
+- 커밋 메시지는 prefix를 포함한 짧은 영어 형식으로 작성합니다.
+    - 예: `feat: add page hero section`
