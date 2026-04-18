@@ -1,2 +1,8 @@
 guides/
+
+# OpenCode-generated workspace data
+.sisyphus/
+nul
+
+# OpenCode browser automation artifacts
 .playwright-mcp/
