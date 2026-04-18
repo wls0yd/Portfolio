@@ -1,0 +1,98 @@
+:root {
+	color-scheme: dark;
+	--bg: #050816;
+	--bg-soft: #0c1228;
+	--surface: rgba(12, 18, 40, 0.78);
+	--surface-strong: rgba(19, 27, 57, 0.94);
+	--border: rgba(156, 173, 255, 0.2);
+	--text: #eff3ff;
+	--muted: #aeb8dc;
+	--cyan: #6ce5ff;
+	--pink: #ff6fd8;
+	--lime: #b7ff7a;
+	--shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
+	--max-width: 1180px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	font-family: "Segoe UI", "Apple SD Gothic Neo", sans-serif;
+	background:
+		radial-gradient(circle at 15% 15%, rgba(255, 111, 216, 0.2), transparent 26%),
+		radial-gradient(circle at 85% 20%, rgba(108, 229, 255, 0.18), transparent 24%),
+		radial-gradient(circle at 50% 80%, rgba(183, 255, 122, 0.1), transparent 30%),
+		linear-gradient(180deg, #030510 0%, #050816 48%, #040712 100%);
+	color: var(--text);
+	line-height: 1.6;
+}
+
+body::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	background-image:
+		linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+	background-size: 72px 72px;
+	opacity: 0.35;
+	mask-image: radial-gradient(circle at center, black 45%, transparent 100%);
+}
+
+a {
+	color: inherit;
+}
+
+h1,
+h2,
+h3,
+p {
+	margin-top: 0;
+}
+
+h1 {
+	margin-bottom: 18px;
+	font-size: clamp(3rem, 8vw, 6.4rem);
+	line-height: 0.92;
+	letter-spacing: -0.05em;
+	text-transform: uppercase;
+}
+
+h2 {
+	margin-bottom: 14px;
+	font-size: clamp(1.8rem, 4vw, 3rem);
+	line-height: 1;
+	text-transform: uppercase;
+	letter-spacing: -0.03em;
+}
+
+h3 {
+	margin-bottom: 10px;
+	font-size: 1.45rem;
+	text-transform: uppercase;
+	letter-spacing: -0.03em;
+}
+
+.section-tag {
+	margin: 0 0 14px;
+	color: var(--cyan);
+	font-size: 0.82rem;
+	font-weight: 800;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+}
+
+.dynamic-status {
+	margin: 0;
+	color: var(--muted);
+	font-size: 0.95rem;
+}

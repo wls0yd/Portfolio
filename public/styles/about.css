@@ -1,0 +1,27 @@
+.stat-list,
+.project-card ul,
+.timeline-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.stat-list {
+	display: grid;
+	gap: 16px;
+}
+
+.stat-list li {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	padding: 16px 18px;
+	border-radius: 20px;
+	background: rgba(255, 255, 255, 0.04);
+	border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.stat-list strong {
+	font-size: 1.4rem;
+	color: var(--lime);
+}
