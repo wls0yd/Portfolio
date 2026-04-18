@@ -1,0 +1,23 @@
+# AGENTS.md
+
+## 프로젝트 구조
+- 이 프로젝트의 목표는 개인 홈페이지이며, 기본 방향은 포트폴리오 중심 사이트입니다. 현재는 최소 정적 페이지 상태지만, 이후 소개, 프로젝트, 연락처 등 필요한 섹션을 점진적으로 추가할 예정입니다.
+- 이 저장소는 현재 `public/` 아래의 순수 정적 사이트를 그대로 배포합니다. 실제 진입점은 `public/index.html`이고, 공용 스타일은 `public/styles.css`에 있습니다.
+- `src/`, `content/`, `data/`, `config/`, `scripts/`, `tests/`는 지금은 자리만 잡아둔 placeholder 디렉터리입니다. `public/` 바깥에 동작 중인 앱, 빌드 파이프라인, 테스트 스위트가 있다고 가정하지 마세요.
+
+## 배포 기준 파일
+- GitHub Pages는 `.github/workflows/deploy-pages.yml`을 통해 `./public`을 직접 배포합니다. 트리거는 `main` 브랜치 push와 `workflow_dispatch`입니다.
+- 워크플로에 빌드 단계가 없습니다. 실제로 배포되는 내용을 바꾸려면 `public/` 아래 파일을 수정하세요.
+- GitHub Pages의 Jekyll 처리를 의도적으로 켜려는 것이 아니라면 `public/.nojekyll`은 유지하세요.
+
+## 라우팅 / 경로 주의점
+- `public/404.html`의 base-path 처리 로직을 유지하세요. 이 파일은 `*.github.io/<repo>/` 형태의 project site 호스팅을 감지해서 홈 링크를 다시 계산합니다.
+- 절대 URL이나 루트 기준 경로(`/...`)를 다룰 때 주의하세요. 이 저장소는 커스텀 도메인 루트만이 아니라 GitHub Pages project site 경로에서도 동작하도록 구성되어 있습니다.
+
+## 명령어와 검증
+- 이 저장소에는 repo 차원의 패키지 매니저, task runner, lint, typecheck, test 명령이 정의되어 있지 않습니다. `npm`, `pnpm` 같은 빌드 명령을 임의로 만들지 마세요.
+- 확인된 자동화 흐름은 Pages 업로드/배포 워크플로뿐입니다. 현재 검증은 파일 단위 수동 확인이 기준이며, `public/`의 HTML/CSS와 Pages 경로 동작이 깨지지 않는지 직접 점검해야 합니다.
+
+## 로컬 문서 / ignore 파일
+- `guides/`는 로컬에 존재하고 참고용 문서를 담고 있지만, `.gitignore`로 디렉터리 전체가 무시됩니다. ignore 규칙이 바뀌지 않는 한 guide 수정사항이 커밋된다고 가정하지 마세요.
+- 이 파일을 추가하기 전에는 `AGENTS.md`, `CLAUDE.md`, Copilot, Cursor 규칙 같은 기존 repo 지침 파일이 없었습니다.
