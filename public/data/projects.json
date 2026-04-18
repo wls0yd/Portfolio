@@ -1,0 +1,23 @@
+[
+  {
+    "index": "01",
+    "title": "Commercial Project",
+    "description": "실제 출시 또는 상용화를 목표로 진행한 프로젝트 카테고리입니다.",
+    "accent": "accent-a",
+    "tags": ["Gameplay", "Live Build", "Optimization"]
+  },
+  {
+    "index": "02",
+    "title": "Prototype Project",
+    "description": "핵심 재미와 시스템 검증을 위한 프로토타입 카테고리입니다.",
+    "accent": "accent-b",
+    "tags": ["Core Loop", "Combat Test", "Iteration"]
+  },
+  {
+    "index": "03",
+    "title": "Personal Project",
+    "description": "개인 연구, 포트폴리오용 실험, 학습 기록을 담는 카테고리입니다.",
+    "accent": "accent-c",
+    "tags": ["Study", "Experiment", "Showcase"]
+  }
+]
