@@ -19,6 +19,10 @@
 		align-items: flex-start;
 		flex-direction: column;
 	}
+
+	.categories-card .section-heading h2 {
+		text-align: left;
+	}
 }
 
 @media (max-width: 720px) {
@@ -34,7 +38,6 @@
 	.stat-card,
 	.projects-panel,
 	.timeline-panel,
-	.skill-panel,
 	.contact-panel {
 		padding: 22px;
 		border-radius: 24px;

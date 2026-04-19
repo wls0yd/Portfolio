@@ -11,6 +11,28 @@
 	gap: 16px;
 }
 
+.categories-card {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+.categories-card .section-heading {
+	align-items: flex-start;
+	margin-bottom: 0;
+}
+
+.categories-card .section-heading h2 {
+	font-size: clamp(2.2rem, 4.2vw, 4rem);
+	line-height: 0.94;
+	text-align: right;
+	text-transform: uppercase;
+}
+
+.categories-card .chip-group {
+	margin-top: auto;
+}
+
 .stat-list li {
 	display: flex;
 	align-items: center;

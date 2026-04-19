@@ -1,10 +1,19 @@
+.timeline-panel {
+	display: flex;
+	flex-direction: column;
+}
+
 .timeline-list {
-	display: grid;
+	display: flex;
+	flex: 1;
+	flex-direction: column;
 	gap: 18px;
 }
 
 .timeline-list > li {
 	display: grid;
+	flex: 1;
+	align-content: start;
 	grid-template-columns: 118px minmax(0, 1fr);
 	gap: 14px;
 	padding: 18px 0;
@@ -101,11 +110,6 @@
 
 .timeline-subdetails li::marker {
 	color: rgba(255, 255, 255, 0.72);
-}
-
-.skill-panel {
-	display: flex;
-	flex-direction: column;
 }
 
 .chip-group {

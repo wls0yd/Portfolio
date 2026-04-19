@@ -84,7 +84,6 @@
 .stat-card,
 .projects-panel,
 .timeline-panel,
-.skill-panel,
 .contact-panel {
 	position: relative;
 	z-index: 1;
@@ -101,7 +100,6 @@
 .stat-card,
 .projects-panel,
 .timeline-panel,
-.skill-panel,
 .contact-panel {
 	padding: 30px;
 	background: var(--surface-strong);
