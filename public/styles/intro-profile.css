@@ -138,3 +138,13 @@
 	font-weight: 600;
 	color: #ffffff;
 }
+
+.hero-name {
+	font-size: clamp(2.8rem, 6.4vw, 5.2rem);
+	line-height: 1.02;
+	word-break: keep-all;
+}
+
+.hero-name br {
+	display: block;
+}
