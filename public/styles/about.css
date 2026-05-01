@@ -32,9 +32,14 @@
 	line-height: 1;
 }
 
-.intro-card > p:last-child {
+.intro-copy {
+	display: grid;
+	gap: 16px;
 	margin-top: clamp(18px, 2.6vw, 28px);
-	margin-bottom: 0;
+}
+
+.intro-copy p {
+	margin: 0;
 }
 
 .categories-card {

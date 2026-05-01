@@ -1,3 +1,4 @@
+export const introduceContent = document.querySelector("[data-introduce-content]");
 export const projectList = document.querySelector("[data-project-list]");
 export const careerList = document.querySelector("[data-career-list]");
 export const projectDialog = document.querySelector("[data-project-dialog]");
