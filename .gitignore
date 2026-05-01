@@ -7,3 +7,7 @@ nul
 
 # OpenCode browser automation artifacts
 .playwright-mcp/
+
+# Oh-My-Codex auto-generated file
+.omx
+.codex
