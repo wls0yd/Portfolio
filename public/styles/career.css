@@ -1,0 +1,147 @@
+.timeline-panel {
+	display: flex;
+	flex-direction: column;
+}
+
+.timeline-list {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	gap: 18px;
+}
+
+.timeline-list > li {
+	display: grid;
+	flex: 1;
+	align-content: start;
+	grid-template-columns: 118px minmax(0, 1fr);
+	gap: 14px;
+	padding: 18px 0;
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.timeline-list > li:first-child {
+	padding-top: 0;
+	border-top: 0;
+}
+
+.timeline-list strong {
+	display: block;
+	margin-bottom: 6px;
+	font-size: 1.05rem;
+	text-transform: uppercase;
+}
+
+.timeline-copy {
+	display: grid;
+	gap: 12px;
+}
+
+.timeline-copy p,
+.timeline-detail-summary {
+	margin: 0;
+	color: var(--muted);
+}
+
+.timeline-meta {
+	display: grid;
+	gap: 10px;
+	margin: 0;
+	padding-top: 12px;
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.timeline-meta div {
+	display: grid;
+	gap: 4px;
+}
+
+.timeline-meta dt,
+.timeline-meta dd {
+	margin: 0;
+}
+
+.timeline-meta dt {
+	color: var(--cyan);
+	font-size: 0.78rem;
+	font-weight: 700;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+}
+
+.timeline-meta dd {
+	font-weight: 600;
+	color: #ffffff;
+}
+
+.timeline-details,
+.timeline-subdetails {
+	margin: 0;
+	padding: 0;
+}
+
+.timeline-details {
+	display: grid;
+	gap: 12px;
+	list-style: none;
+}
+
+.timeline-detail-label {
+	color: #ffffff;
+	font-weight: 700;
+}
+
+.timeline-link {
+	color: var(--cyan);
+	font-weight: 700;
+}
+
+.timeline-link:hover,
+.timeline-link:focus-visible {
+	text-decoration: underline;
+}
+
+.timeline-subdetails {
+	display: grid;
+	gap: 8px;
+	padding-left: 18px;
+	color: var(--muted);
+}
+
+.timeline-subdetails li::marker {
+	color: rgba(255, 255, 255, 0.72);
+}
+
+.chip-group {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-top: auto;
+}
+
+.chip-group span {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 12px 16px;
+	border-radius: 999px;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	background: rgba(255, 255, 255, 0.05);
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+
+.contact-panel {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 8px;
+	padding-block: 34px;
+}
+
+.contact-panel h2,
+.contact-panel p {
+	max-width: 620px;
+	margin-bottom: 0;
+}

@@ -1,0 +1,76 @@
+@media (max-width: 980px) {
+	.panel-grid,
+	.info-grid,
+	.split-grid,
+	.project-list {
+		grid-template-columns: 1fr;
+	}
+
+	.profile-card,
+	.hero-copy {
+		min-height: auto;
+	}
+
+	.avatar-frame {
+		margin-left: 0;
+	}
+
+	.section-heading {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	.categories-card .section-heading h2 {
+		align-self: flex-start;
+		text-align: left;
+	}
+}
+
+@media (max-width: 720px) {
+	:where(section, article)[id] {
+		scroll-margin-top: 120px;
+	}
+
+	.page-shell {
+		width: min(calc(100% - 20px), var(--max-width));
+		padding-top: 12px;
+		padding-bottom: 40px;
+	}
+
+	.topbar,
+	.panel-grid,
+	.intro-card,
+	.stat-card,
+	.projects-panel,
+	.timeline-panel,
+	.contact-panel {
+		padding: 22px;
+		border-radius: 24px;
+	}
+
+	.topbar {
+		position: static;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.topnav {
+		justify-content: flex-start;
+	}
+
+	h1 {
+		font-size: clamp(2.5rem, 16vw, 4rem);
+	}
+
+	.hero-name {
+		font-size: clamp(2.2rem, 11vw, 3.4rem);
+	}
+
+	.timeline-list > li {
+		grid-template-columns: 1fr;
+	}
+
+	.project-dialog {
+		padding: 24px;
+	}
+}

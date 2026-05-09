@@ -3,42 +3,147 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MyHomepage 테스트 페이지</title>
+    <title>Developer Portfolio</title>
     <meta
       name="description"
-      content="GitHub Pages 배포 상태를 확인하기 위한 MyHomepage 테스트 페이지입니다."
+      content="게임 개발과 콘솔 출시 경험을 기반으로 AI와 CLI 기반 워크플로를 활용하는 개발자 포트폴리오입니다."
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <main class="page">
-      <section class="hero">
-        <p class="eyebrow">GitHub Pages Ready</p>
-        <h1>테스트 페이지가 정상적으로 배포되었습니다.</h1>
-        <p class="description">
-          지금은 GitHub Pages로 먼저 공개하고, 이후 원하는 시점에 커스텀 도메인으로 전환할 수 있도록
-          최소 구성으로 준비한 상태입니다.
-        </p>
-        <div class="actions">
-          <a
-            class="button primary"
-            href="https://github.com/Jeong-Jin-Yong/MyHomeapge"
-            target="_blank"
-            rel="noreferrer"
-            >저장소 확인</a
-          >
-          <a class="button secondary" href="./404.html">404 페이지 확인</a>
-        </div>
-      </section>
+    <div class="page-shell">
+      <header class="topbar" aria-label="사이트 상단">
+        <a class="brand" href="./index.html">wls0yd Portfolio</a>
+        <nav class="topnav" aria-label="주요 탐색">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Career</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
 
-      <section class="status-card" aria-labelledby="status-heading">
-        <h2 id="status-heading">현재 상태</h2>
-        <ul>
-          <li>정적 테스트 페이지 구성 완료</li>
-          <li>GitHub Actions 기반 Pages 배포 워크플로 추가</li>
-          <li>추후 커스텀 도메인 연결 가능한 구조</li>
-        </ul>
-      </section>
-    </main>
+      <main class="layout">
+        <section class="hero-panel panel-grid">
+          <div class="hero-copy">
+            <p class="section-tag">DEVELOPER PORTFOLIO</p>
+            <h1 class="hero-name">정진용<br />Jeong JinYong</h1>
+            <p class="hero-text">
+              게임 개발과 콘솔 출시 경험을 기반으로, AI와 CLI 기반 워크플로를 활용해 다양한 개발 문제를 빠르게 이해하고 해결하는 개발자를 지향합니다.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#projects">View Projects</a>
+              <a class="button secondary" href="#contact">Get In Touch</a>
+            </div>
+          </div>
+
+          <aside class="profile-card" aria-label="프로필 카드">
+            <div class="avatar-frame" aria-hidden="true">
+              <span>01</span>
+            </div>
+            <p class="profile-label">AVAILABLE FOR</p>
+            <h2>Game / Tools / Automation</h2>
+            <dl class="profile-meta">
+              <div>
+                <dt>ROLE</dt>
+                <dd>Developer</dd>
+              </div>
+              <div>
+                <dt>ENGINE</dt>
+                <dd>Unity / Cocos Creator</dd>
+              </div>
+              <div>
+                <dt>FOCUS</dt>
+                <dd>AI Workflow / CLI / Problem Solving</dd>
+              </div>
+            </dl>
+          </aside>
+        </section>
+
+        <section class="info-grid" id="about">
+          <article class="panel intro-card">
+            <div class="section-heading">
+              <p class="section-tag">ABOUT</p>
+              <h2>Introduction</h2>
+            </div>
+            <div class="intro-copy" data-introduce-content>
+              <p class="dynamic-status">Introduce data is loading.</p>
+            </div>
+          </article>
+
+          <article class="panel stat-card categories-card">
+            <div class="section-heading">
+              <p class="section-tag">STACK</p>
+              <h2>Tech Categories</h2>
+            </div>
+
+            <div class="chip-group" aria-label="상단 기술 카테고리 목록">
+              <span>Unity</span>
+              <span>Cocos Creator</span>
+              <span>C#</span>
+              <span>TypeScript</span>
+            </div>
+          </article>
+        </section>
+
+        <section class="panel projects-panel" id="projects" aria-labelledby="projects-heading">
+          <div class="section-heading">
+            <p class="section-tag">FEATURED PROJECTS</p>
+            <h2 id="projects-heading">Selected Projects</h2>
+          </div>
+
+          <div class="project-list" data-project-list>
+            <p class="dynamic-status">Project data is loading.</p>
+          </div>
+        </section>
+
+        <div class="project-dialog-backdrop" data-project-dialog hidden>
+          <div
+            class="project-dialog"
+            id="project-detail-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="project-dialog-title"
+          >
+            <button class="project-dialog-close" type="button" data-project-close aria-label="프로젝트 상세 닫기">
+              ×
+            </button>
+            <p class="project-dialog-index" data-project-dialog-index></p>
+            <h3 id="project-dialog-title" data-project-dialog-title></h3>
+            <p class="project-dialog-subtitle" data-project-dialog-subtitle></p>
+            <p class="project-dialog-overview" data-project-dialog-overview></p>
+            <ul class="project-dialog-highlights" data-project-dialog-highlights></ul>
+            <div class="project-dialog-links" data-project-dialog-links></div>
+          </div>
+        </div>
+
+        <section>
+          <article class="panel timeline-panel" id="experience">
+            <div class="section-heading">
+              <p class="section-tag">CAREER</p>
+              <h2>Career Journey</h2>
+            </div>
+
+            <ol class="timeline-list" data-career-list>
+              <li>
+                <p class="dynamic-status">Career data is loading.</p>
+              </li>
+            </ol>
+          </article>
+        </section>
+
+        <section class="panel contact-panel" id="contact">
+          <p class="section-tag">CONTACT</p>
+          <h2>Contact</h2>
+          <p>
+            프로젝트, 채용, 협업 관련 문의는 아래 이메일로 연락해 주세요.
+          </p>
+          <a class="button primary" href="mailto:noel3927@gmail.com">noel3927@gmail.com</a>
+        </section>
+      </main>
+    </div>
+    <script src="./data/introduce.js" defer></script>
+    <script src="./data/projects.js" defer></script>
+    <script src="./data/career.js" defer></script>
+    <script type="module" src="./scripts/home-content.js"></script>
   </body>
 </html>
