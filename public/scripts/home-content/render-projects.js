@@ -16,6 +16,17 @@ function renderProjectMedia(item) {
   `;
 }
 
+function renderProjectContent(item, tags, note) {
+  return `
+    ${renderProjectMedia(item)}
+    <p class="project-index">${escapeHtml(item.index || "")}</p>
+    <h3>${escapeHtml(item.title || "")}</h3>
+    <p>${escapeHtml(item.description || "")}</p>
+    ${note}
+    <ul>${tags}</ul>
+  `;
+}
+
 export function renderProjects(items) {
   if (!projectList) {
     return;
@@ -35,13 +46,9 @@ export function renderProjects(items) {
       if (item.detail && item.id) {
         return `
           <article class="project-card ${escapeHtml(item.themeClass || "")}" id="${escapeHtml(item.anchorId || "")}">
+            ${renderProjectContent(item, tags, note)}
             <button class="project-card-button" type="button" data-project-trigger="${escapeHtml(item.id)}" aria-haspopup="dialog" aria-controls="project-detail-dialog">
-              ${renderProjectMedia(item)}
-              <p class="project-index">${escapeHtml(item.index || "")}</p>
-              <h3>${escapeHtml(item.title || "")}</h3>
-              <p>${escapeHtml(item.description || "")}</p>
-              ${note}
-              <ul>${tags}</ul>
+              자세히 보기
             </button>
           </article>
         `;
@@ -49,11 +56,7 @@ export function renderProjects(items) {
 
       return `
         <article class="project-card ${escapeHtml(item.themeClass || "")}">
-          ${renderProjectMedia(item)}
-          <p class="project-index">${escapeHtml(item.index || "")}</p>
-          <h3>${escapeHtml(item.title || "")}</h3>
-          <p>${escapeHtml(item.description || "")}</p>
-          <ul>${tags}</ul>
+          ${renderProjectContent(item, tags, note)}
         </article>
       `;
     })

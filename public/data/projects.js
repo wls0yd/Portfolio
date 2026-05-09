@@ -69,26 +69,4 @@ window.__HOME_PROJECTS__ = [
       ],
     },
   },
-  {
-    index: "03",
-    title: "Prototype Project",
-    description: "핵심 재미와 시스템 검증을 위한 프로토타입 카테고리입니다.",
-    themeClass: "project-3",
-    cardImage: {
-      src: "./images/projects/prototype-cover.svg",
-      alt: "Prototype Project 카드 대표 이미지",
-    },
-    tags: ["Core Loop", "Combat Test", "Iteration"],
-  },
-  {
-    index: "04",
-    title: "Personal Project",
-    description: "개인 연구, 포트폴리오용 실험, 학습 기록을 담는 카테고리입니다.",
-    themeClass: "project-1",
-    cardImage: {
-      src: "./images/projects/personal-cover.svg",
-      alt: "Personal Project 카드 대표 이미지",
-    },
-    tags: ["Study", "Experiment", "Showcase"],
-  },
 ];
