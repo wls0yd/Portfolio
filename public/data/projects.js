@@ -80,4 +80,50 @@ window.__HOME_PROJECTS__ = [
       ],
     },
   },
+  {
+    index: "03",
+    id: "no-more-slimes",
+    anchorId: "project-no-more-slimes",
+    title: "No More Slimes!!",
+    description: "Unity와 C#으로 개발해 PC와 콘솔에 출시한 성장형 2D 도트 액션 게임입니다.",
+    category: {
+      key: "company",
+      label: "MinimumStudio",
+    },
+    themeClass: "project-3",
+    cardImage: {
+      src: "./images/projects/NoMoreSlimes-Logo.png",
+      alt: "No More Slimes!! 프로젝트 카드 대표 이미지",
+    },
+    tags: ["Unity", "C#", "PC", "PS5", "Nintendo Switch", "Xbox"],
+    detail: {
+      overview:
+        "Unity와 C#으로 개발한 성장형 2D 도트 액션 게임으로, 몰려오는 슬라임을 처치하고 전리품을 모아 캐릭터와 무기를 강화하는 회사 프로젝트입니다. 스킬 트리, 카드, 유물, 용병을 조합해 자신만의 전투 방식을 완성하며, PC와 PS5, Nintendo Switch, Xbox에 출시했습니다.",
+      highlights: [
+        "간단하고 직관적인 조작으로 슬라임 무리를 상대하며, 사냥과 전리품 획득, 강화를 반복하는 누적 성장의 재미를 담았습니다.",
+        "공격력과 공격 속도, 특수 능력 등 스킬 트리의 성장 경로를 선택하고 카드와 유물을 조합해 다양한 빌드를 구성할 수 있습니다.",
+        "서로 다른 공격 방식과 고유 스킬을 가진 용병을 고용하고 성장시켜, 자동 전투와 스킬 활용을 결합한 전투를 즐길 수 있습니다.",
+        "번개, 빙결, 운석, 벽에 튕기는 부메랑 등 다양한 능력과 광역 공격으로 화면을 가득 채운 적을 공략할 수 있습니다.",
+        "무기를 강화할수록 공격 범위와 화력이 증가하며, PC와 콘솔에서 2D 도트 그래픽과 시원한 타격감을 즐길 수 있도록 출시한 프로젝트입니다.",
+      ],
+      links: [
+        {
+          label: "Steam 페이지",
+          href: "https://store.steampowered.com/app/4228920/_/",
+        },
+        {
+          label: "PlayStation Store",
+          href: "https://store.playstation.com/en-us/concept/10020374",
+        },
+        {
+          label: "Nintendo eShop",
+          href: "https://www.nintendo.com/us/store/products/no-more-slimes-switch/",
+        },
+        {
+          label: "Xbox Store",
+          href: "https://www.xbox.com/en-US/games/store/no-more-slimes/9ND0TL6RRK61",
+        },
+      ],
+    },
+  },
 ];
