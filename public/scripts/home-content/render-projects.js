@@ -30,6 +30,8 @@ const PLATFORM_TAGS = new Set([
   "PS5",
   "Nintendo Switch",
   "Xbox",
+  "iOS",
+  "Android",
 ]);
 
 let renderedProjectItems = [];
