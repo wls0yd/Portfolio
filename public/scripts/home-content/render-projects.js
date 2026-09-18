@@ -159,7 +159,10 @@ function renderProjectGroup(category, items, activeCategoryKey) {
   const isActive = category.key === activeCategoryKey;
   const panelId = `project-panel-${category.key}`;
   const groupContent = items.length > 0
-    ? items.map(renderProjectCard).join("")
+    ? items.map((item, index) => renderProjectCard({
+      ...item,
+      index: String(index + 1).padStart(2, "0"),
+    })).join("")
     : `<p class="project-empty-card">${escapeHtml(category.emptyMessage)}</p>`;
 
   return `
