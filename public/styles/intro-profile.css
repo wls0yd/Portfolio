@@ -17,7 +17,7 @@
 	word-break: keep-all;
 }
 
-.hero-name span {
+.hero-name .hero-name-alias {
 	color: var(--color-muted);
 	font-size: var(--type-body);
 	font-weight: 400;

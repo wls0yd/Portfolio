@@ -1,5 +1,6 @@
-import { introduceContent } from "./dom.js";
-import { escapeHtml } from "./utils.js";
+import { introduceContent } from "./dom.js?v=3";
+import { escapeHtml } from "./utils.js?v=3";
+import { t } from "../i18n.js?v=3";
 
 export function renderIntroduce(item) {
   if (!introduceContent) {
@@ -9,7 +10,7 @@ export function renderIntroduce(item) {
   const paragraphs = Array.isArray(item?.paragraphs) ? item.paragraphs : [];
 
   if (paragraphs.length === 0) {
-    introduceContent.innerHTML = '<p class="dynamic-status">Introduce data is empty.</p>';
+    introduceContent.innerHTML = `<p class="dynamic-status">${escapeHtml(t("introduce.empty"))}</p>`;
     return;
   }
 

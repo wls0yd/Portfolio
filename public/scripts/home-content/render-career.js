@@ -1,5 +1,6 @@
-import { careerList } from "./dom.js";
-import { escapeHtml, renderLink } from "./utils.js";
+import { careerList } from "./dom.js?v=3";
+import { escapeHtml, renderLink } from "./utils.js?v=3";
+import { t } from "../i18n.js?v=3";
 
 function renderCareerTitle(value) {
   const title = String(value || "");
@@ -89,17 +90,23 @@ export function renderCareer(items) {
     return;
   }
 
+  const openItems = new Set(
+    [...careerList.querySelectorAll("[data-career-id]")]
+      .filter((item) => item.querySelector("details")?.open)
+      .map((item) => item.dataset.careerId),
+  );
+
   careerList.innerHTML = items
     .map(
       (item) => `
-        <li>
+        <li data-career-id="${escapeHtml(item.id || "")}">
           <span class="timeline-year">${escapeHtml(item.year || "")}</span>
           <div class="timeline-copy">
             <h3>${renderCareerTitle(item.title)}</h3>
             ${item.description ? `<p>${escapeHtml(item.description)}</p>` : ""}
             ${(item.meta?.length || item.highlights?.length) ? `
-              <details class="timeline-extra">
-                <summary>상세 보기<span class="sr-only">: ${escapeHtml(item.title)}</span></summary>
+              <details class="timeline-extra"${openItems.has(item.id) ? " open" : ""}>
+                <summary>${escapeHtml(t("career.details"))}<span class="sr-only">: ${escapeHtml(item.title)}</span></summary>
                 <div class="timeline-extra-content">
                   ${renderTimelineMeta(item.meta)}
                   ${renderTimelineHighlights(item.highlights)}

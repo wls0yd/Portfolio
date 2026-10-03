@@ -1,5 +1,6 @@
-window.__HOME_CAREER__ = [
+export const career = [
   {
+    id: "minimum-studio",
     year: "2025.07 ~ 현재",
     title: "미니멈스튜디오 (Minimum Studio)",
     description: "Unity/Cocos Creator 기반 클라이언트 로직 설계와 구현을 담당하고 있습니다.",
@@ -31,6 +32,7 @@ window.__HOME_CAREER__ = [
     ],
   },
   {
+    id: "hanbat-university",
     year: "2022.03 ~ 2026.02",
     title: "국립한밭대학교 컴퓨터공학과",
     description: "2026년 2월 졸업",

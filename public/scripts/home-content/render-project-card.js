@@ -1,5 +1,6 @@
-import { getProjectCategory, getProjectCategoryLabel } from "./project-categories.js";
-import { escapeHtml, renderLink } from "./utils.js";
+import { getProjectCategory, getProjectCategoryLabel } from "./project-categories.js?v=3";
+import { escapeHtml, renderLink } from "./utils.js?v=3";
+import { t } from "../i18n.js?v=3";
 
 const PLATFORM_TAGS = new Set(["HoloLens 2", "PC", "PS5", "Nintendo Switch", "Xbox", "iOS", "Android"]);
 
@@ -13,7 +14,7 @@ export function renderProjectCard(item) {
     ? `<img src="${escapeHtml(item.cardImage.src)}" alt="${escapeHtml(item.cardImage.alt || "")}" loading="lazy" decoding="async" />`
     : '<div class="project-card-media-placeholder" aria-hidden="true"></div>';
   const action = item.detail && item.id
-    ? `<button class="project-card-button" type="button" data-project-trigger="${escapeHtml(item.id)}" aria-label="${escapeHtml(item.title)} 상세 보기" aria-haspopup="dialog" aria-controls="project-detail-dialog">프로젝트 살펴보기 <span aria-hidden="true">↗</span></button>`
+    ? `<button class="project-card-button" type="button" data-project-trigger="${escapeHtml(item.id)}" aria-label="${escapeHtml(t("projects.details", { title: item.title }))}" aria-haspopup="dialog" aria-controls="project-detail-dialog">${escapeHtml(t("projects.explore"))} <span aria-hidden="true">↗</span></button>`
     : (Array.isArray(item.detail?.links) ? item.detail.links : [])
       .map((link) => renderLink(link, "project-card-link")).join("");
 
@@ -25,7 +26,7 @@ export function renderProjectCard(item) {
         <h3>${escapeHtml(item.title || "")}</h3>
         <p class="project-card-description">${escapeHtml(item.description || "")}</p>
         ${item.externalNote ? `<p class="project-note">${escapeHtml(item.externalNote)}</p>` : ""}
-        <ul class="project-platforms" aria-label="플랫폼 및 주요 기술">${summaryTags.map((tag) => `<li>${escapeHtml(tag)}</li>`).join("")}</ul>
+        <ul class="project-platforms" aria-label="${escapeHtml(t("projects.platforms"))}">${summaryTags.map((tag) => `<li>${escapeHtml(tag)}</li>`).join("")}</ul>
         ${action}
       </div>
     </article>

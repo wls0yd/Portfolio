@@ -1,8 +1,9 @@
-import { projectList, projectTabs, projectCount, projectStatus } from "./dom.js";
-import { bindProjectTriggers, setProjectDetailLookup } from "./project-dialog.js";
-import { PROJECT_CATEGORIES, getProjectCategory } from "./project-categories.js";
-import { renderProjectCard } from "./render-project-card.js";
-import { escapeHtml } from "./utils.js";
+import { projectList, projectTabs, projectCount, projectStatus } from "./dom.js?v=3";
+import { bindProjectTriggers, setProjectDetailLookup } from "./project-dialog.js?v=3";
+import { getProjectCategories, getProjectCategory } from "./project-categories.js?v=3";
+import { renderProjectCard } from "./render-project-card.js?v=3";
+import { escapeHtml } from "./utils.js?v=3";
+import { t } from "../i18n.js?v=3";
 
 let renderedProjectItems = [];
 let projectHandlersBound = false;
@@ -13,7 +14,7 @@ function getCategoryItems(key) {
 }
 
 function activateProjectCategory(key, { focusTab = false, announce = true } = {}) {
-  const category = PROJECT_CATEGORIES.find((item) => item.key === key);
+  const category = getProjectCategories().find((item) => item.key === key);
   if (!category || !projectList || !projectTabs) return;
 
   projectTabs.querySelectorAll("[data-project-tab]").forEach((tab) => {
@@ -30,13 +31,13 @@ function activateProjectCategory(key, { focusTab = false, announce = true } = {}
   });
   const emptyState = projectList.querySelector("[data-project-empty]");
   emptyState.hidden = items.length > 0;
-  emptyState.querySelector("h3").textContent = category.emptyTitle || "공개된 프로젝트가 없습니다";
-  emptyState.querySelector("p").textContent = category.emptyMessage || "공개할 프로젝트를 정리하고 있습니다.";
+  emptyState.querySelector("h3").textContent = category.emptyTitle;
+  emptyState.querySelector("p").textContent = category.emptyMessage;
   if (projectCount) projectCount.textContent = String(items.length).padStart(2, "0");
   if (projectStatus && announce) {
     projectStatus.textContent = items.length > 0
-      ? `${category.title} 프로젝트 ${items.length}개를 표시합니다.`
-      : `${category.title} 프로젝트는 공개 준비 중입니다.`;
+      ? t("projects.status", { category: category.title, count: items.length })
+      : t("projects.emptyStatus", { category: category.title });
   }
 }
 
@@ -87,13 +88,15 @@ function bindProjectNavigation() {
   projectHandlersBound = true;
 }
 
-export function renderProjects(items) {
+export function renderProjects(items, { revealHash = true } = {}) {
   if (!projectList || !projectTabs) return;
 
-  const categoryOrder = (item) => PROJECT_CATEGORIES.indexOf(getProjectCategory(item));
+  const selectedCategory = projectTabs.querySelector('[aria-selected="true"]')?.dataset.projectTab || "all";
+  const categories = getProjectCategories();
+  const categoryOrder = (item) => categories.findIndex((category) => category.key === getProjectCategory(item).key);
   renderedProjectItems = [...items].sort((left, right) => categoryOrder(left) - categoryOrder(right));
   setProjectDetailLookup(renderedProjectItems);
-  projectTabs.innerHTML = PROJECT_CATEGORIES.map((category) => `
+  projectTabs.innerHTML = categories.map((category) => `
     <button class="project-tab" id="project-tab-${category.key}" type="button" role="tab"
       aria-selected="${category.key === "all"}" aria-controls="project-panel" tabindex="${category.key === "all" ? "0" : "-1"}"
       data-project-tab="${category.key}">
@@ -107,8 +110,9 @@ export function renderProjects(items) {
       <div class="project-empty-card" data-project-empty hidden><h3></h3><p></p></div>
     </div>
   `;
-  activateProjectCategory("all", { announce: false });
+  activateProjectCategory(selectedCategory, { announce: false });
+  if (projectStatus) projectStatus.textContent = "";
   bindProjectTriggers(projectList);
   bindProjectNavigation();
-  revealProjectFromHash();
+  if (revealHash) revealProjectFromHash();
 }

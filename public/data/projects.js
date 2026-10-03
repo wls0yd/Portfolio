@@ -1,4 +1,4 @@
-window.__HOME_PROJECTS__ = [
+export const projects = [
   {
     index: "01",
     id: "arslope",

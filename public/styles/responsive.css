@@ -1,4 +1,8 @@
 @media (max-width: 61.25rem) {
+	.brand-context {
+		display: none;
+	}
+
 	.project-gallery {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
@@ -45,8 +49,9 @@
 		padding-block: var(--space-2);
 	}
 
-	.theme-switcher {
+	.site-controls {
 		flex-basis: 100%;
+		justify-content: space-between;
 	}
 
 	.brand-context {
@@ -68,7 +73,7 @@
 		font-size: 2.625rem;
 	}
 
-	.hero-name span {
+	.hero-name .hero-name-alias {
 		font-size: var(--type-body-sm);
 	}
 
@@ -160,6 +165,11 @@
 }
 
 @media (max-width: 26.25rem) {
+	html[lang="en"] .project-tab {
+		gap: var(--space-1);
+		padding-inline: var(--space-1);
+	}
+
 	.hero-line-break {
 		display: none;
 	}

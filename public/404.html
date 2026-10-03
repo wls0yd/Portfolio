@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>페이지를 찾을 수 없습니다</title>
+    <title data-i18n="error.title">페이지를 찾을 수 없습니다</title>
     <style>
       :root {
         color-scheme: light;
@@ -40,6 +40,52 @@
         border: 1px solid var(--border);
         border-radius: 24px;
         box-shadow: var(--shadow);
+      }
+
+      .language-switcher {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+
+      .language-switcher::after {
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        width: 7px;
+        height: 7px;
+        border-right: 1.5px solid currentColor;
+        border-bottom: 1.5px solid currentColor;
+        content: "";
+        transform: translateY(-75%) rotate(45deg);
+        pointer-events: none;
+      }
+
+      .language-switcher[hidden] {
+        display: none;
+      }
+
+      .language-switcher select {
+        -webkit-appearance: none;
+        appearance: none;
+        min-height: 44px;
+        padding: 8px 32px 8px 12px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--surface);
+        color: var(--text);
+        font: inherit;
+      }
+
+      .language-switcher select:focus {
+        outline: none;
+      }
+
+      .language-switcher select:focus-visible {
+        border-color: var(--primary);
       }
 
       .eyebrow {
@@ -100,12 +146,19 @@
   </head>
   <body>
     <main class="page">
+      <label class="language-switcher" data-language-switcher hidden>
+        <span data-i18n="language.label">언어 선택</span>
+        <select data-language-select>
+          <option value="ko" lang="ko">한국어</option>
+          <option value="en" lang="en">English</option>
+        </select>
+      </label>
       <section class="hero">
         <p class="eyebrow">404</p>
-        <h1>요청한 페이지를 찾을 수 없습니다.</h1>
-        <p class="description">주소를 다시 확인하거나 홈으로 돌아가 배포 상태를 확인해 주세요.</p>
+        <h1 data-i18n="error.heading">요청한 페이지를 찾을 수 없습니다.</h1>
+        <p class="description" data-i18n="error.description">주소를 다시 확인하거나 홈으로 돌아가 배포 상태를 확인해 주세요.</p>
         <div class="actions">
-          <a class="button" id="home-link" href="/">홈으로 이동</a>
+          <a class="button" id="home-link" href="/" data-i18n="error.home" data-language-home>홈으로 이동</a>
         </div>
       </section>
     </main>
@@ -116,6 +169,11 @@
       const basePath = isProjectPages ? `/${pathParts[0]}/` : "/";
 
       document.getElementById("home-link")?.setAttribute("href", basePath);
+
+      const languageScript = document.createElement("script");
+      languageScript.type = "module";
+      languageScript.src = `${basePath}scripts/error-page.js`;
+      document.head.appendChild(languageScript);
     </script>
   </body>
 </html>

@@ -1,25 +1,26 @@
-export const PROJECT_CATEGORIES = [
-  { key: "all", title: "전체" },
-  { key: "company", title: "회사" },
-  { key: "team", title: "팀" },
-  {
-    key: "personal",
-    title: "개인",
-    emptyTitle: "개인 프로젝트 준비 중",
-    emptyMessage: "1인 개발로 제작 중인 프로젝트를 추후 공개할 예정입니다.",
-  },
-];
+import { t } from "../i18n.js?v=3";
+
+export function getProjectCategories() {
+  return ["all", "company", "team", "personal"].map((key) => ({
+    key,
+    title: t(`projects.category.${key}`),
+    emptyTitle: t(key === "personal" ? "projects.personalTitle" : "projects.emptyTitle"),
+    emptyMessage: t(key === "personal" ? "projects.personalMessage" : "projects.emptyMessage"),
+  }));
+}
 
 export function getProjectCategory(item) {
   const key = typeof item?.category === "string" ? item.category : item?.category?.key;
-  return PROJECT_CATEGORIES.find((category) => category.key !== "all" && category.key === key)
-    || PROJECT_CATEGORIES.find((category) => category.key === "team");
+  const categories = getProjectCategories();
+  return categories.find((category) => category.key !== "all" && category.key === key)
+    || categories.find((category) => category.key === "team");
 }
 
 export function getProjectCategoryLabel(item) {
   const category = getProjectCategory(item);
   const label = typeof item.category === "object" ? item.category?.label : "";
-  return label && label !== `${category.title} 프로젝트`
+  const defaultLabel = t("projects.categoryLabel", { category: category.title });
+  return label && label !== defaultLabel
     ? `${category.title} · ${label}`
-    : `${category.title} 프로젝트`;
+    : defaultLabel;
 }
