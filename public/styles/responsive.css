@@ -31,7 +31,7 @@
 
 @media (max-width: 45rem) {
 	html {
-		scroll-padding-top: 5rem;
+		scroll-padding-top: 9rem;
 	}
 
 	.page-shell {
@@ -40,7 +40,13 @@
 
 	.topbar {
 		min-height: 4rem;
-		gap: var(--space-2);
+		flex-wrap: wrap;
+		gap: var(--space-1) var(--space-2);
+		padding-block: var(--space-2);
+	}
+
+	.theme-switcher {
+		flex-basis: 100%;
 	}
 
 	.brand-context {

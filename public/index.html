@@ -8,6 +8,7 @@
       name="description"
       content="게임 개발과 콘솔 출시 경험을 기반으로 AI와 CLI 기반 워크플로를 활용하는 개발자 포트폴리오입니다."
     />
+    <script src="./scripts/theme.js"></script>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -20,6 +21,35 @@
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </nav>
+        <fieldset class="theme-switcher" data-theme-switcher hidden>
+          <legend class="sr-only">화면 테마</legend>
+          <label class="theme-option" title="라이트 모드">
+            <input class="sr-only" type="radio" name="theme" value="light" aria-label="라이트 모드" />
+            <span class="theme-option-control" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" />
+              </svg>
+            </span>
+          </label>
+          <label class="theme-option" title="다크 모드">
+            <input class="sr-only" type="radio" name="theme" value="dark" aria-label="다크 모드" />
+            <span class="theme-option-control" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z" />
+              </svg>
+            </span>
+          </label>
+          <label class="theme-option" title="시스템 설정 따르기">
+            <input class="sr-only" type="radio" name="theme" value="system" aria-label="시스템 설정 따르기" checked />
+            <span class="theme-option-control" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                <rect x="3" y="4" width="18" height="13" rx="2" />
+                <path d="M12 17v4m-4 0h8" />
+              </svg>
+            </span>
+          </label>
+        </fieldset>
       </header>
 
       <main class="layout" id="main-content" tabindex="-1">

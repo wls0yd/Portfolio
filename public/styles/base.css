@@ -1,26 +1,4 @@
 :root {
-	color-scheme: dark;
-
-	--color-canvas: #070907;
-	--color-canvas-raised: #0a0d0b;
-	--color-surface: #0e120f;
-	--color-surface-alt: #131914;
-	--color-surface-elevated: #19211a;
-	--color-text: #f2f6f1;
-	--color-muted: #b5c0b6;
-	--color-subtle: #7f8d81;
-	--color-line: #273128;
-	--color-line-strong: #3e5140;
-	--color-accent-deep: #5f8e35;
-	--color-accent: #9ddf62;
-	--color-accent-bright: #c9f6a4;
-	--color-accent-soft: rgba(157, 223, 98, 0.11);
-	--color-accent-faint: rgba(157, 223, 98, 0.045);
-	--color-sheen: rgba(242, 246, 241, 0.045);
-	--color-grid: rgba(157, 223, 98, 0.035);
-	--color-scrim: rgba(3, 5, 3, 0.82);
-	--color-shadow: rgba(0, 0, 0, 0.42);
-
 	--font-sans: Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
 	--font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 	--type-display: clamp(2.5rem, 5vw, 3.75rem);
@@ -79,7 +57,7 @@ body {
 
 ::selection {
 	background: var(--color-accent);
-	color: var(--color-canvas);
+	color: var(--color-on-accent);
 }
 
 img {
