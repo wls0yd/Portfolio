@@ -35,14 +35,6 @@
 	border: 0;
 }
 
-.stack-note {
-	margin: var(--space-5) 0 0;
-	color: var(--color-muted);
-	font-size: var(--type-body-sm);
-	line-height: 1.7;
-	overflow-wrap: anywhere;
-}
-
 .contact-panel {
 	display: flex;
 	align-items: center;
