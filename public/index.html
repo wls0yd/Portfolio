@@ -14,63 +14,59 @@
     <a class="skip-link" href="#main-content">본문으로 바로가기</a>
     <div class="page-shell">
       <header class="topbar" aria-label="사이트 상단">
-        <a class="brand" href="./index.html">wls0yd Portfolio</a>
+        <a class="brand" href="./index.html">wls0yd<span class="brand-context"> / portfolio</span></a>
         <nav class="topnav" aria-label="주요 탐색">
           <a href="#projects">Projects</a>
-          <a href="#experience">Career</a>
-          <a href="#stack">Stack</a>
+          <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
 
       <main class="layout" id="main-content" tabindex="-1">
-        <section class="hero-panel panel-grid" aria-labelledby="hero-heading">
+        <section class="hero-panel" aria-labelledby="hero-heading">
           <div class="hero-copy">
-            <p class="section-tag">DEVELOPER PORTFOLIO</p>
-            <h1 class="hero-name" id="hero-heading">정진용<br />Jeong JinYong</h1>
+            <p class="section-tag">GAME · TOOLS · AUTOMATION</p>
+            <h1 class="hero-name" id="hero-heading">정진용 <span>Jeong JinYong</span></h1>
             <p class="hero-text">
-              게임 개발과 콘솔 출시 경험을 기반으로, AI와 CLI 기반 워크플로를 활용해 다양한 개발 문제를 빠르게 이해하고 해결하는 개발자를 지향합니다.
+              게임 개발과 콘솔 출시 경험을 바탕으로,<br class="hero-line-break" /> 다양한 개발 문제를 이해하고 해결합니다.
             </p>
             <div class="hero-actions">
-              <a class="button primary" href="#projects">View Projects</a>
-              <a class="button secondary" href="#contact">Get In Touch</a>
+              <a class="button primary" href="#projects">프로젝트 보기 <span aria-hidden="true">↓</span></a>
+              <a class="button secondary" href="#contact">연락하기</a>
             </div>
           </div>
 
-          <aside class="profile-card" aria-label="프로필 카드">
-            <div class="avatar-frame" aria-hidden="true">
-              <span>01</span>
-            </div>
-            <p class="profile-label">AVAILABLE FOR</p>
-            <h2>Game / Tools / Automation</h2>
+          <aside class="profile-card" aria-label="개발 분야와 기술">
             <dl class="profile-meta">
               <div>
-                <dt>ROLE</dt>
-                <dd>Developer</dd>
-              </div>
-              <div>
                 <dt>ENGINE</dt>
-                <dd>Unity / Cocos Creator</dd>
+                <dd>Unity · Godot · Cocos Creator</dd>
               </div>
               <div>
-                <dt>FOCUS</dt>
-                <dd>AI Workflow / CLI / Problem Solving</dd>
+                <dt>EXPERIENCE</dt>
+                <dd>PC · Console · Mobile</dd>
+              </div>
+              <div>
+                <dt>WORKFLOW</dt>
+                <dd>AI Workflow · CLI</dd>
               </div>
             </dl>
           </aside>
         </section>
 
-        <section class="panel projects-panel" id="projects" aria-labelledby="projects-heading">
-          <div class="section-heading">
-            <div class="section-heading-copy">
-              <p class="section-tag">FEATURED PROJECTS</p>
+        <section class="projects-panel" id="projects" aria-labelledby="projects-heading">
+          <div class="projects-toolbar">
+            <div class="section-heading">
+              <p class="section-tag">SELECTED WORK</p>
+              <h2 id="projects-heading">프로젝트 <span class="project-count" data-project-count aria-hidden="true"></span></h2>
             </div>
-            <h2 id="projects-heading">Selected Projects</h2>
+            <div class="project-tabs" role="tablist" aria-label="프로젝트 분류" data-project-tabs></div>
           </div>
-
+          <p class="sr-only" data-project-status role="status" aria-atomic="true"></p>
           <div class="project-list" data-project-list>
-            <p class="dynamic-status">Project data is loading.</p>
+            <p class="dynamic-status">프로젝트를 불러오는 중입니다.</p>
           </div>
+          <noscript><p class="dynamic-status">프로젝트와 경력을 보려면 브라우저에서 JavaScript를 활성화해 주세요.</p></noscript>
         </section>
 
         <div class="project-dialog-backdrop" data-project-dialog hidden>
@@ -87,54 +83,53 @@
             <p class="project-dialog-index" data-project-dialog-index></p>
             <h3 id="project-dialog-title" data-project-dialog-title></h3>
             <p class="project-dialog-subtitle" data-project-dialog-subtitle></p>
+            <ul class="project-dialog-tags" data-project-dialog-tags aria-label="사용 기술과 플랫폼"></ul>
             <p class="project-dialog-overview" data-project-dialog-overview></p>
             <ul class="project-dialog-highlights" data-project-dialog-highlights></ul>
             <div class="project-dialog-links" data-project-dialog-links></div>
           </div>
         </div>
 
-        <section class="panel timeline-panel" id="experience" aria-labelledby="career-heading">
-          <div class="section-heading">
-            <div class="section-heading-copy">
-              <p class="section-tag">CAREER</p>
+        <div class="about-grid" id="about">
+          <section class="timeline-panel" id="experience" aria-labelledby="career-heading">
+            <div class="section-heading">
+              <h2 id="career-heading">Career</h2>
             </div>
-            <h2 id="career-heading">Career Journey</h2>
-          </div>
 
-          <ol class="timeline-list" data-career-list>
-            <li>
-              <p class="dynamic-status">Career data is loading.</p>
-            </li>
-          </ol>
-        </section>
+            <ol class="timeline-list" data-career-list>
+              <li>
+                <p class="dynamic-status">경력을 불러오는 중입니다.</p>
+              </li>
+            </ol>
+          </section>
 
-        <section class="panel stat-card categories-card" id="stack" aria-labelledby="stack-heading">
-          <div class="section-heading">
-            <div class="section-heading-copy">
-              <p class="section-tag">STACK</p>
+          <section class="categories-card" id="stack" aria-labelledby="stack-heading">
+            <div class="section-heading">
+              <h2 id="stack-heading">Stack &amp; workflow</h2>
             </div>
-            <h2 id="stack-heading">Tech Categories</h2>
-          </div>
 
-          <div class="chip-group" aria-label="상단 기술 카테고리 목록">
-            <span>Unity</span>
-            <span>Cocos Creator</span>
-            <span>C#</span>
-            <span>TypeScript</span>
-          </div>
-        </section>
+            <ul class="chip-group" aria-label="사용 기술">
+              <li>Unity</li>
+              <li>Godot</li>
+              <li>Cocos Creator</li>
+              <li>C#</li>
+              <li>TypeScript</li>
+            </ul>
+            <p class="stack-note">AI Workflow / CLI / Problem Solving</p>
+          </section>
+        </div>
 
-        <section class="panel contact-panel" id="contact" aria-labelledby="contact-heading">
+        <section class="contact-panel" id="contact" aria-labelledby="contact-heading">
           <div class="contact-copy">
-            <p class="section-tag">CONTACT</p>
-            <h2 id="contact-heading">Contact</h2>
+            <h2 id="contact-heading">함께 만들 다음 프로젝트.</h2>
             <p>
               프로젝트, 채용, 협업 관련 문의는 아래 이메일로 연락해 주세요.
             </p>
           </div>
-          <a class="button primary" href="mailto:noel3927@gmail.com">noel3927@gmail.com</a>
+          <a class="contact-link" href="mailto:noel3927@gmail.com">noel3927@gmail.com <span aria-hidden="true">↗</span></a>
         </section>
       </main>
+      <footer class="site-footer"><span>정진용 · Game Developer</span><span>Game / Tools / Automation</span></footer>
     </div>
     <script src="./data/projects.js" defer></script>
     <script src="./data/career.js" defer></script>

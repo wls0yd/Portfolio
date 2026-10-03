@@ -95,10 +95,17 @@ export function renderCareer(items) {
         <li>
           <span class="timeline-year">${escapeHtml(item.year || "")}</span>
           <div class="timeline-copy">
-            <strong>${renderCareerTitle(item.title)}</strong>
+            <h3>${renderCareerTitle(item.title)}</h3>
             ${item.description ? `<p>${escapeHtml(item.description)}</p>` : ""}
-            ${renderTimelineMeta(item.meta)}
-            ${renderTimelineHighlights(item.highlights)}
+            ${(item.meta?.length || item.highlights?.length) ? `
+              <details class="timeline-extra">
+                <summary>상세 보기<span class="sr-only">: ${escapeHtml(item.title)}</span></summary>
+                <div class="timeline-extra-content">
+                  ${renderTimelineMeta(item.meta)}
+                  ${renderTimelineHighlights(item.highlights)}
+                </div>
+              </details>
+            ` : ""}
           </div>
         </li>
       `,

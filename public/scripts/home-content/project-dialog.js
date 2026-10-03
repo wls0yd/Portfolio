@@ -6,9 +6,11 @@ import {
   projectDialogLinks,
   projectDialogOverview,
   projectDialogSubtitle,
+  projectDialogTags,
   projectDialogTitle,
 } from "./dom.js";
 import { escapeHtml, renderLink } from "./utils.js";
+import { getProjectCategoryLabel } from "./project-categories.js";
 
 let lastProjectTrigger = null;
 let projectDetailLookup = new Map();
@@ -33,6 +35,7 @@ function renderDialogHighlight(value) {
 function setDialogBackgroundInert(isInert) {
   const backgroundElements = [
     document.querySelector(".topbar"),
+    document.querySelector(".site-footer"),
     ...document.querySelectorAll(".layout > :not([data-project-dialog])"),
   ].filter(Boolean);
 
@@ -100,7 +103,7 @@ export function openProjectDialog(project, trigger) {
   }
 
   if (projectDialogIndex) {
-    projectDialogIndex.textContent = project.index || "";
+    projectDialogIndex.textContent = getProjectCategoryLabel(project);
   }
 
   if (projectDialogTitle) {
@@ -115,6 +118,13 @@ export function openProjectDialog(project, trigger) {
   if (projectDialogOverview) {
     projectDialogOverview.textContent = project.detail.overview || "";
     projectDialogOverview.hidden = !project.detail.overview;
+  }
+
+  if (projectDialogTags) {
+    projectDialogTags.innerHTML = Array.isArray(project.tags)
+      ? project.tags.map((tag) => `<li>${escapeHtml(tag)}</li>`).join("")
+      : "";
+    projectDialogTags.hidden = !projectDialogTags.innerHTML;
   }
 
   if (projectDialogHighlights) {
@@ -136,6 +146,7 @@ export function openProjectDialog(project, trigger) {
 
   lastProjectTrigger = trigger || null;
   projectDialog.hidden = false;
+  projectDialog.querySelector(".project-dialog").scrollTop = 0;
   document.body.classList.add("dialog-open");
   setDialogBackgroundInert(true);
   projectDialogCloseButton?.focus();

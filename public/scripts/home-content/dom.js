@@ -1,10 +1,14 @@
 export const introduceContent = document.querySelector("[data-introduce-content]");
 export const projectList = document.querySelector("[data-project-list]");
+export const projectTabs = document.querySelector("[data-project-tabs]");
+export const projectCount = document.querySelector("[data-project-count]");
+export const projectStatus = document.querySelector("[data-project-status]");
 export const careerList = document.querySelector("[data-career-list]");
 export const projectDialog = document.querySelector("[data-project-dialog]");
 export const projectDialogIndex = document.querySelector("[data-project-dialog-index]");
 export const projectDialogTitle = document.querySelector("[data-project-dialog-title]");
 export const projectDialogSubtitle = document.querySelector("[data-project-dialog-subtitle]");
+export const projectDialogTags = document.querySelector("[data-project-dialog-tags]");
 export const projectDialogOverview = document.querySelector("[data-project-dialog-overview]");
 export const projectDialogHighlights = document.querySelector("[data-project-dialog-highlights]");
 export const projectDialogLinks = document.querySelector("[data-project-dialog-links]");
