@@ -50,8 +50,4 @@ export const messages = {
   "contact.title": "Let's build the next project.",
   "contact.description": "For project, career, or collaboration inquiries, please get in touch by email.",
   "footer.name": "Jeong JinYong · Game Developer",
-  "error.title": "Page not found",
-  "error.heading": "The requested page could not be found.",
-  "error.description": "Please check the address or return to the homepage to check the site's deployment status.",
-  "error.home": "Go to homepage",
 };

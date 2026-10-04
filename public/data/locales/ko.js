@@ -50,8 +50,4 @@ export const messages = {
   "contact.title": "함께 만들 다음 프로젝트.",
   "contact.description": "프로젝트, 채용, 협업 관련 문의는 아래 이메일로 연락해 주세요.",
   "footer.name": "정진용 · Game Developer",
-  "error.title": "페이지를 찾을 수 없습니다",
-  "error.heading": "요청한 페이지를 찾을 수 없습니다.",
-  "error.description": "주소를 다시 확인하거나 홈으로 돌아가 배포 상태를 확인해 주세요.",
-  "error.home": "홈으로 이동",
 };

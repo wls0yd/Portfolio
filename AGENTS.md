@@ -17,7 +17,6 @@
 - GitHub Pages의 Jekyll 처리를 의도적으로 켜려는 것이 아니라면 `public/.nojekyll`은 유지하세요.
 
 ## 라우팅 / 경로 주의점
-- `public/404.html`의 base-path 처리 로직을 유지하세요. 이 파일은 `*.github.io/<repo>/` 형태의 project site 호스팅을 감지해서 홈 링크를 다시 계산합니다.
 - 절대 URL이나 루트 기준 경로(`/...`)를 다룰 때 주의하세요. 이 저장소는 커스텀 도메인 루트만이 아니라 GitHub Pages project site 경로에서도 동작하도록 구성되어 있습니다.
 
 ## 명령어와 검증
