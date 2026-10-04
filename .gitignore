@@ -11,3 +11,5 @@ nul
 # Oh-My-Codex auto-generated file
 .omx
 .codex
+
+.DS_Store
