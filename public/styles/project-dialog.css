@@ -13,26 +13,41 @@
 }
 
 .project-dialog {
+	--dialog-padding: clamp(var(--space-6), 4vw, var(--space-10));
+	display: flex;
+	flex-direction: column;
 	position: relative;
 	width: min(47.5rem, 100%);
 	max-height: min(84dvh, 54rem);
-	overflow: auto;
-	padding: clamp(var(--space-6), 4vw, var(--space-10));
+	overflow: hidden;
 	border: 1px solid var(--color-line-strong);
 	border-radius: var(--radius-lg);
 	background: var(--color-surface-elevated);
 	box-shadow: var(--shadow-floating);
 }
 
+.project-dialog-toolbar {
+	flex-shrink: 0;
+	display: flex;
+	justify-content: flex-end;
+	padding: var(--space-3) var(--space-3) var(--space-2);
+	border-bottom: 1px solid var(--color-line);
+}
+
+.project-dialog-body {
+	min-height: 0;
+	overflow-y: auto;
+	overscroll-behavior: contain;
+	padding: var(--space-5) var(--dialog-padding) var(--dialog-padding);
+	scroll-padding-block: var(--space-4);
+}
+
 .project-dialog-close {
-	position: sticky;
-	top: 0;
-	z-index: 2;
 	display: grid;
 	width: 2.75rem;
 	height: 2.75rem;
 	place-items: center;
-	margin: calc(var(--space-3) * -1) calc(var(--space-3) * -1) 0 auto;
+	flex-shrink: 0;
 	border: 1px solid var(--color-line-strong);
 	border-radius: var(--radius-md);
 	background: var(--color-canvas-raised);

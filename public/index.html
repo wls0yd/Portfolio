@@ -118,16 +118,29 @@
             aria-modal="true"
             aria-labelledby="project-dialog-title"
           >
-            <button class="project-dialog-close" type="button" data-project-close aria-label="프로젝트 상세 닫기" data-i18n-aria-label="dialog.close">
-              ×
-            </button>
-            <p class="project-dialog-index" data-project-dialog-index></p>
-            <h3 id="project-dialog-title" data-project-dialog-title></h3>
-            <p class="project-dialog-subtitle" data-project-dialog-subtitle></p>
-            <ul class="project-dialog-tags" data-project-dialog-tags aria-label="사용 기술과 플랫폼" data-i18n-aria-label="dialog.tags"></ul>
-            <p class="project-dialog-overview" data-project-dialog-overview></p>
-            <ul class="project-dialog-highlights" data-project-dialog-highlights></ul>
-            <div class="project-dialog-links" data-project-dialog-links></div>
+            <div class="project-dialog-toolbar">
+              <button class="project-dialog-close" type="button" data-project-close aria-label="프로젝트 상세 닫기" data-i18n-aria-label="dialog.close">
+                ×
+              </button>
+            </div>
+            <div class="project-dialog-body">
+              <p class="project-dialog-index" data-project-dialog-index></p>
+              <h3 id="project-dialog-title" data-project-dialog-title></h3>
+              <p class="project-dialog-subtitle" data-project-dialog-subtitle></p>
+              <ul class="project-dialog-tags" data-project-dialog-tags aria-label="사용 기술과 플랫폼" data-i18n-aria-label="dialog.tags"></ul>
+              <div class="project-detail-tabs" role="tablist" aria-label="프로젝트 상세 내용" data-i18n-aria-label="dialog.tabs">
+                <button type="button" id="project-overview-tab" role="tab" aria-selected="true" aria-controls="project-overview-panel" data-detail-tab data-i18n="dialog.overview">프로젝트 소개</button>
+                <button type="button" id="project-contribution-tab" role="tab" aria-selected="false" aria-controls="project-contribution-panel" tabindex="-1" data-detail-tab data-i18n="contribution.title">나의 기여</button>
+              </div>
+              <div class="project-detail-panel" id="project-overview-panel" role="tabpanel" aria-labelledby="project-overview-tab" tabindex="0">
+                <p class="project-dialog-overview" data-project-dialog-overview></p>
+                <ul class="project-dialog-highlights" data-project-dialog-highlights></ul>
+                <div class="project-dialog-links" data-project-dialog-links></div>
+              </div>
+              <div class="project-detail-panel" id="project-contribution-panel" role="tabpanel" aria-labelledby="project-contribution-tab" tabindex="0" hidden>
+                <div data-project-contribution></div>
+              </div>
+            </div>
           </div>
         </div>
 

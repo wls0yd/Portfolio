@@ -1,4 +1,17 @@
 export const messages = {
+  "dialog.overview": "Overview",
+  "dialog.tabs": "Project details",
+  "contribution.title": "My contribution",
+  "contribution.draft": "Placeholder",
+  "contribution.note": "This section is reserved for contribution details. Actual roles and work will be added later.",
+  "contribution.role": "My role",
+  "contribution.rolePlaceholder": "Role to be added",
+  "contribution.scope": "Scope · Contribution",
+  "contribution.scopePlaceholder": "Scope and contribution to be added",
+  "contribution.tasks": "Work I owned",
+  "contribution.taskTitle": "Task title to be added",
+  "contribution.workPlaceholder": "Describe the problem addressed and the features personally designed and implemented.",
+
   "page.title": "Developer Portfolio",
   "page.description": "A game developer's portfolio featuring game development, console releases, and AI- and CLI-based workflows.",
   "skipLink": "Skip to main content",

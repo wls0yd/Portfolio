@@ -1,3 +1,5 @@
+import { resetProjectDetailTabs, setupProjectDetailTabs } from "./project-detail-tabs.js";
+import { renderProjectContribution } from "./render-project-contribution.js";
 import {
   projectDialog,
   projectDialogCloseButton,
@@ -51,7 +53,7 @@ function trapProjectDialogFocus(event) {
 
   const focusableElements = Array.from(
     projectDialog.querySelectorAll(DIALOG_FOCUSABLE_SELECTOR),
-  ).filter((element) => element.getClientRects().length > 0);
+  ).filter((element) => element.tabIndex >= 0 && element.getClientRects().length > 0);
 
   if (focusableElements.length === 0) {
     event.preventDefault();
@@ -144,9 +146,15 @@ export function openProjectDialog(project, trigger) {
     projectDialogLinks.hidden = !projectDialogLinks.innerHTML;
   }
 
+  const contribution = projectDialog.querySelector("[data-project-contribution]");
+  if (contribution) {
+    contribution.innerHTML = renderProjectContribution(project.detail.contribution);
+  }
+
+  resetProjectDetailTabs(projectDialog);
   lastProjectTrigger = trigger || null;
   projectDialog.hidden = false;
-  projectDialog.querySelector(".project-dialog").scrollTop = 0;
+  projectDialog.querySelector(".project-dialog-body").scrollTop = 0;
   document.body.classList.add("dialog-open");
   setDialogBackgroundInert(true);
   projectDialogCloseButton?.focus();
@@ -172,6 +180,8 @@ export function setupProjectDialog() {
   if (!projectDialog) {
     return;
   }
+
+  setupProjectDetailTabs(projectDialog);
 
   projectDialog.addEventListener("click", (event) => {
     if (event.target === projectDialog) {

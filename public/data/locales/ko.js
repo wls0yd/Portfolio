@@ -1,4 +1,17 @@
 export const messages = {
+  "dialog.overview": "프로젝트 소개",
+  "dialog.tabs": "프로젝트 상세 내용",
+  "contribution.title": "나의 기여",
+  "contribution.draft": "임시 내용",
+  "contribution.note": "아래는 기여 내용을 담을 자리입니다. 실제 역할과 작업 내용은 추후 업데이트됩니다.",
+  "contribution.role": "담당 역할",
+  "contribution.rolePlaceholder": "역할 입력 예정",
+  "contribution.scope": "기여 범위 · 기여도",
+  "contribution.scopePlaceholder": "담당 범위와 기여도 입력 예정",
+  "contribution.tasks": "담당 작업",
+  "contribution.taskTitle": "담당 작업 제목 입력 예정",
+  "contribution.workPlaceholder": "어떤 문제를 해결했고, 어떤 기능을 직접 설계·구현했는지 작성할 공간입니다.",
+
   "page.title": "Developer Portfolio",
   "page.description": "게임 개발과 콘솔 출시 경험을 기반으로 AI와 CLI 기반 워크플로를 활용하는 개발자 포트폴리오입니다.",
   "skipLink": "본문으로 바로가기",
