@@ -1,227 +1,127 @@
+// Language-independent project metadata. Display text lives in locales/<language>/<language>-projects.js.
 export const projects = [
   {
-    index: "01",
-    id: "arslope",
-    anchorId: "project-arslope",
-    title: "AR Slope",
-    description: "현실 물체를 기반으로 트랙을 생성하는 AR 멀티플레이 레이싱 졸업 프로젝트입니다.",
-    category: {
-      key: "team",
-      label: "팀 프로젝트",
+    "index": "01",
+    "id": "arslope",
+    "anchorId": "project-arslope",
+    "title": "AR Slope",
+    "category": {
+      "key": "team"
     },
-    themeClass: "project-1",
-    cardImage: {
-      src: "./images/projects/ARSlope-Logo.png",
-      alt: "AR Slope 프로젝트 카드 대표 이미지",
+    "themeClass": "project-1",
+    "cardImage": {
+      "src": "./images/projects/ARSlope-Logo.png"
     },
-    tags: ["AR", "HoloLens 2", "Multiplayer"],
-    detail: {
-      contribution: {
-        "role": "팀장 · 네트워크 개발 · Git 관리",
-        "scope": "Photon PUN 기반 멀티플레이, 차량·게임 상태 동기화, 브랜치·PR 병합 및 변경 이력 관리",
-        "tasks": [
-          {
-            "title": "2인 멀티플레이 접속과 대기 흐름 구현",
-            "work": "Photon PUN을 이용해 서버 연결과 최대 2인 룸 생성·입장을 구현했습니다. 접속 인원에 따라 대기 화면을 제어하고, 마스터 클라이언트의 물체 선택과 다른 클라이언트의 대기 흐름을 연결했습니다."
-          },
-          {
-            "title": "차량 상태 동기화",
-            "work": "차량의 위치·회전·속도를 송수신하고, 원격 차량에는 보간을 적용했습니다. 마스터가 아닌 클라이언트에서 차량이 움직이지 않는 문제를 수정하고, 차량 크기 동기화와 재시작 시 네트워크 위치 초기화를 구현했습니다."
-          },
-          {
-            "title": "게임 종료·재시작과 오브젝트 동기화",
-            "work": "RPC를 이용해 승자 정보와 게임 종료 상태를 모든 클라이언트에 전달하고, 재시작 요청을 마스터에서 처리하도록 구성했습니다. 차량 초기화, 아이템·장애물 재생성 흐름을 연결하고, 아이템 생성·표시에 Photon을 적용했습니다."
-          },
-          {
-            "title": "팀 프로젝트 Git 관리와 변경 사항 통합",
-            "work": "팀장으로서 프로젝트 Git 저장소를 직접 관리했습니다. 기능 브랜치와 develop·main 사이의 변경 사항 및 PR을 병합하고, 문제가 있는 변경은 되돌린 뒤 다시 반영했습니다. 통합 과정에서 발생한 컴파일 오류도 수정했습니다."
-          }
-        ]
-      },
-      subtitle: "Capstone Design (2025) · Team Lead / Network Developer",
-      overview:
-        "Microsoft HoloLens 2 기반으로 현실 공간의 물체를 트랙 요소로 활용하고, 두 사용자가 동일 공간에서 경쟁할 수 있도록 설계한 동적 AR 레이싱 시스템입니다. 캡스톤 프로젝트로 기획부터 구현, 논문 정리까지 연결해 완성했습니다.",
-      highlights: [
-        "현실 공간의 평면과 물체를 인식하고, 물체 중심 좌표를 기반으로 환경에 따라 형태와 난이도가 달라지는 동적 레이싱 트랙을 구성했습니다.",
-        "팀장으로서 네트워크 개발을 중심으로 참여하고, 프로젝트 Git 관리와 변경 사항 통합을 담당했습니다.",
-        "Photon PUN으로 차량과 게임 상태를 동기화하고, World Locking Tools의 앵커 저장·로드 흐름을 RPC 신호와 연결했습니다.",
-        "핸드 트래킹과 제스처 입력을 활용해 차량 조작, 체크포인트 진행, 아이템 및 장애물 상호작용이 가능한 플레이 흐름을 설계했습니다.",
-        "프로젝트 결과를 바탕으로 'ARSlope: 현실 물체 기반 동적 증강현실 멀티플레이 레이싱 시스템' 논문을 정리했고, 한국컴퓨터그래픽스학회논문지에 게재되었습니다.",
-      ],
-      links: [
+    "tags": [
+      "AR",
+      "HoloLens 2",
+      "Multiplayer"
+    ],
+    "detail": {
+      "subtitle": "Capstone Design (2025) · Team Lead / Network Developer",
+      "links": [
         {
-          label: "GitHub 저장소",
-          href: "https://github.com/wls0yd/ARSlope",
+          "href": "https://github.com/wls0yd/ARSlope",
+          "labelKey": "github"
         },
         {
-          label: "KCGS 게재 논문",
-          href: "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003311665",
-        },
-      ],
-    },
+          "href": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003311665",
+          "labelKey": "paper"
+        }
+      ]
+    }
   },
   {
-    index: "02",
-    id: "catgirl-survivor-1",
-    anchorId: "project-catgirl-survivor-1",
-    title: "CatGirlSurvivor1",
-    description: "Unity와 C#으로 개발한 뱀서라이크 2D 도트 액션 게임 프로젝트입니다.",
-    category: {
-      key: "company",
-      label: "MinimumStudio",
+    "index": "02",
+    "id": "catgirl-survivor-1",
+    "anchorId": "project-catgirl-survivor-1",
+    "title": "CatGirlSurvivor1",
+    "category": {
+      "key": "company"
     },
-    themeClass: "project-2",
-    cardImage: {
-      src: "./images/projects/CatGirlSurvivor1-Logo.jpg",
-      alt: "CatGirlSurvivor1 프로젝트 카드 대표 이미지",
+    "themeClass": "project-2",
+    "cardImage": {
+      "src": "./images/projects/CatGirlSurvivor1-Logo.jpg"
     },
-    tags: ["Unity", "C#", "ECS", "PC", "PS5", "Nintendo Switch", "Xbox"],
-    detail: {
-      contribution: {
-        "role": "게임 클라이언트 개발 · Xbox 출시 담당",
-        "scope": "ECS 적용·최적화, 콘텐츠 및 편의 기능 개발, 전투·진행 오류 수정, PC·콘솔 대응",
-        "tasks": [
-          {
-            "title": "Xbox 출시 담당",
-            "work": "캣걸서바이버1의 Xbox 플랫폼 설정과 출시를 담당했습니다."
-          },
-          {
-            "title": "ECS 적용과 실행 성능 개선",
-            "work": "몬스터 애니메이션에 ECS Animator System을 적용하고, 적 생성에 ECS를 적용했습니다. 습득 아이템에는 Object Pool을 적용하고 드로우콜 최적화를 진행했습니다. 무한던전 BGM 변경 시 발생하던 프레임 드랍을 수정하고, 플랫폼별 무한던전 스폰 시간을 조정했습니다."
-          },
-          {
-            "title": "신규 캐릭터·조합 스킬 및 성장 기능 추가",
-            "work": "신규 캐릭터 레아와 조합 스킬 ‘멸망의날’을 추가했습니다. 조합 스킬 밴 기능과 스킬 드랍 보너스 스탯을 추가하고, 스킬 리롤 횟수 제한을 제거했습니다. 방어력 관련 장비·아티팩트 밸런스를 조정했습니다."
-          },
-          {
-            "title": "전투 판정과 던전 진행 오류 수정",
-            "work": "치명타·지속 피해 로직, 특정 미니보스의 스킬 적중·타겟팅, 보스 처치 후 피해가 들어오는 오류를 수정했습니다. 보스러시 입장과 씬 전환·재시작 후 일시정지 상태 오류도 수정했습니다. 무한던전 재로딩 및 자석 사용 후 아이템 흡수 동작을 수정했습니다."
-          },
-          {
-            "title": "플레이 편의 기능과 정보 표시 개선",
-            "work": "장비 스탯 비교 텍스트, 일괄분해 버튼, 가이드·팁 팝업을 추가했습니다. 레벨업 스탯과 치명타 표시, 폰트 오류를 수정했습니다."
-          },
-          {
-            "title": "PC·콘솔 안정화 및 플랫폼 대응",
-            "work": "Nintendo Switch 크래시와 콘솔에서 보스 체력바가 작게 보이는 오류를 수정했습니다. Steam DRM을 설정하고, DLC 환불 후 해금 캐릭터를 계속 플레이할 수 있던 오류를 수정했습니다."
-          }
-        ]
-      },
-      overview:
-        "Unity와 C#으로 개발 중인 뱀서라이크 스타일의 2D 도트 액션 게임으로, 7명의 캣걸 캐릭터와 조합형 스킬 빌드를 중심으로 반복 플레이마다 다른 전투 흐름을 만들 수 있도록 설계한 회사 프로젝트입니다. 쉬운 조작과 깊은 성장 구조를 함께 노리며 PC와 콘솔 출시를 함께 전개하고 있습니다.",
-      highlights: [
-        "개성 있는 7명의 캣걸 캐릭터와 함께 몰려오는 적을 상대하는 뱀서라이크 스타일의 2D 도트 액션 게임입니다.",
-        "조합 스킬을 바탕으로 플레이할 때마다 다른 빌드를 만들 수 있어, 반복 플레이에서도 새로운 전투 흐름을 경험할 수 있습니다.",
-        "자동 공격 기반 조작 위에 이동과 스킬 선택에 집중하는 구조라 진입은 쉽고, 조합과 성장 설계는 깊게 즐길 수 있습니다.",
-        "캐릭터 레벨을 최대 1000까지 성장시키고 장비를 강화할 수 있어, 장기 플레이에서 누적 성장의 재미를 느낄 수 있습니다.",
-        "다양한 스테이지와 보스전, 플랫폼별 대응을 바탕으로 PC와 콘솔 환경 모두를 고려해 확장 중인 프로젝트입니다.",
-      ],
-      links: [
+    "tags": [
+      "Unity",
+      "C#",
+      "ECS",
+      "PC",
+      "PS5",
+      "Nintendo Switch",
+      "Xbox"
+    ],
+    "detail": {
+      "links": [
         {
-          label: "Steam 페이지",
-          href: "https://store.steampowered.com/app/2890940/_/",
+          "href": "https://store.steampowered.com/app/2890940/_/",
+          "labelKey": "steam"
         },
         {
-          label: "PlayStation Store",
-          href: "https://store.playstation.com/en-us/concept/10013657",
+          "label": "PlayStation Store",
+          "href": "https://store.playstation.com/en-us/concept/10013657"
         },
         {
-          label: "Nintendo eShop",
-          href: "https://www.nintendo.com/us/store/products/cat-girl-survivor-switch/",
+          "label": "Nintendo eShop",
+          "href": "https://www.nintendo.com/us/store/products/cat-girl-survivor-switch/"
         },
         {
-          label: "Xbox Store",
-          href: "https://www.xbox.com/en-US/games/store/cat-girl-survivor/9NDL6CWHZ7WR",
-        },
-      ],
-    },
+          "label": "Xbox Store",
+          "href": "https://www.xbox.com/en-US/games/store/cat-girl-survivor/9NDL6CWHZ7WR"
+        }
+      ]
+    }
   },
   {
-    index: "03",
-    id: "no-more-slimes",
-    anchorId: "project-no-more-slimes",
-    title: "No More Slimes!!",
-    description: "Unity와 C#으로 개발해 PC, 콘솔, 모바일에 출시한 성장형 2D 도트 액션 게임입니다.",
-    category: {
-      key: "company",
-      label: "MinimumStudio",
+    "index": "03",
+    "id": "no-more-slimes",
+    "anchorId": "project-no-more-slimes",
+    "title": "No More Slimes!!",
+    "category": {
+      "key": "company"
     },
-    themeClass: "project-3",
-    cardImage: {
-      src: "./images/projects/NoMoreSlimes-Logo.png",
-      alt: "No More Slimes!! 프로젝트 카드 대표 이미지",
+    "themeClass": "project-3",
+    "cardImage": {
+      "src": "./images/projects/NoMoreSlimes-Logo.png"
     },
-    tags: ["Unity", "C#", "PC", "PS5", "Nintendo Switch", "Xbox", "iOS", "Android"],
-    detail: {
-      contribution: {
-        "role": "멀티플랫폼 대응 · 게임 클라이언트 개발",
-        "scope": "PC·Xbox·PS5·Nintendo Switch·iOS·Android 대응, 빌드 자동화, 플랫폼 서비스·입력·구매·저장 데이터 연동",
-        "tasks": [
-          {
-            "title": "PC·콘솔·모바일 빌드 및 배포 자동화",
-            "work": "Windows·macOS·Linux 빌드 프로필과 Steam 업로드 구성을 추가하고, Jenkins 기반 빌드 흐름을 확장했습니다. Xbox 콘솔·PC 빌드 및 패키징, iOS 빌드·App Store Connect 업로드를 연결하고, Android 빌드 설정과 결과물 보관 처리를 개선했습니다."
-          },
-          {
-            "title": "PS5 플랫폼 서비스 연동",
-            "work": "PS5의 트로피, DLC 보유 확인, 리더보드, 저장 데이터 처리를 연동했습니다. 챕터·스테이지 진행과 PS5 Activity를 연결하고, 트로피 진행 상태와 해금 상태 동기화, 저장·리더보드 오류 처리를 개선했습니다."
-          },
-          {
-            "title": "Nintendo Switch 플랫폼 대응",
-            "work": "Switch의 저장 데이터, DLC 보유 확인, 리더보드 연동을 진행했습니다. 컨트롤러 버튼 매핑과 플랫폼별 설정을 조정하고, 네트워크 오류 처리와 빌드 버전 관리, 저장 호출 흐름을 개선했습니다."
-          },
-          {
-            "title": "iOS·Android 조작과 화면 대응",
-            "work": "모바일 터치 조작과 자동 스킬 버튼을 구현하고, 가로 화면 및 기기 안전 영역에 맞춰 UI 배치를 조정했습니다. Android 뒤로 가기와 iOS 언어 설정을 처리하고, iCloud 저장 및 Game Center 리더보드 연동 작업을 진행했습니다."
-          },
-          {
-            "title": "모바일 인앱 구매·DLC 및 구매 복원",
-            "work": "모바일 인앱 구매와 DLC 보유 상태를 게임 내 캐릭터 해금 및 구매 UI에 연결했습니다. 구매 복원 기능과 가격·처리 상태 표시를 추가하고, iOS 구매 이력 확인과 기존 구매자의 해금 상태 유지·표시를 개선했습니다."
-          },
-          {
-            "title": "저장 데이터 호환성과 저장 흐름 개선",
-            "work": "이전 버전 저장 데이터를 현재 구조로 변환하는 마이그레이션과 검증 코드를 추가했습니다. 과거 버전 데이터의 진행도·설정 보존을 확인하고, 재화 처리 중 불필요한 자동 저장과 플랫폼별 저장 호출을 조정했습니다."
-          },
-          {
-            "title": "입력 전환·전투 판정과 게임플레이 개선",
-            "work": "키보드·마우스·게임패드 입력 상태와 버튼 아이콘 처리를 정리하고, 메뉴·스테이지 탐색을 개선했습니다. 공격 대상 탐색과 충돌 판정, 슬라임 생성·풀링 로직을 개선하고, 용병 스탯·스킬 및 성장 시스템을 수정했습니다."
-          }
-        ]
-      },
-      overview:
-        "Unity와 C#으로 개발한 성장형 2D 도트 액션 게임으로, 몰려오는 슬라임을 처치하고 전리품을 모아 캐릭터와 무기를 강화하는 회사 프로젝트입니다. 스킬 트리, 카드, 유물, 용병을 조합해 자신만의 전투 방식을 완성하며, PC, PS5, Nintendo Switch, Xbox, iOS, Android에 출시했습니다.",
-      highlights: [
-        "간단하고 직관적인 조작으로 슬라임 무리를 상대하며, 사냥과 전리품 획득, 강화를 반복하는 누적 성장의 재미를 담았습니다.",
-        "공격력과 공격 속도, 특수 능력 등 스킬 트리의 성장 경로를 선택하고 카드와 유물을 조합해 다양한 빌드를 구성할 수 있습니다.",
-        "서로 다른 공격 방식과 고유 스킬을 가진 용병을 고용하고 성장시켜, 자동 전투와 스킬 활용을 결합한 전투를 즐길 수 있습니다.",
-        "번개, 빙결, 운석, 벽에 튕기는 부메랑 등 다양한 능력과 광역 공격으로 화면을 가득 채운 적을 공략할 수 있습니다.",
-        "무기를 강화할수록 공격 범위와 화력이 증가하며, PC, 콘솔, 모바일에서 2D 도트 그래픽과 시원한 타격감을 즐길 수 있도록 출시한 프로젝트입니다.",
-      ],
-      links: [
+    "tags": [
+      "Unity",
+      "C#",
+      "PC",
+      "PS5",
+      "Nintendo Switch",
+      "Xbox",
+      "iOS",
+      "Android"
+    ],
+    "detail": {
+      "links": [
         {
-          label: "Steam 페이지",
-          href: "https://store.steampowered.com/app/4228920/_/",
+          "href": "https://store.steampowered.com/app/4228920/_/",
+          "labelKey": "steam"
         },
         {
-          label: "PlayStation Store",
-          href: "https://store.playstation.com/en-us/concept/10020374",
+          "label": "PlayStation Store",
+          "href": "https://store.playstation.com/en-us/concept/10020374"
         },
         {
-          label: "Nintendo eShop",
-          href: "https://www.nintendo.com/us/store/products/no-more-slimes-switch/",
+          "label": "Nintendo eShop",
+          "href": "https://www.nintendo.com/us/store/products/no-more-slimes-switch/"
         },
         {
-          label: "Xbox Store",
-          href: "https://www.xbox.com/en-US/games/store/no-more-slimes/9ND0TL6RRK61",
+          "label": "Xbox Store",
+          "href": "https://www.xbox.com/en-US/games/store/no-more-slimes/9ND0TL6RRK61"
         },
         {
-          label: "App Store",
-          href: "https://apps.apple.com/us/app/no-more-slimes-idle-action/id6786115854",
+          "label": "App Store",
+          "href": "https://apps.apple.com/us/app/no-more-slimes-idle-action/id6786115854"
         },
         {
-          label: "Google Play",
-          href: "https://play.google.com/store/apps/details?id=com.minimumstudio.nomoreslimes",
-        },
-      ],
-    },
-  },
+          "label": "Google Play",
+          "href": "https://play.google.com/store/apps/details?id=com.minimumstudio.nomoreslimes"
+        }
+      ]
+    }
+  }
 ];

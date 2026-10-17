@@ -3,7 +3,7 @@ import { renderCareer } from "./home-content/render-career.js?v=3";
 import { renderIntroduce } from "./home-content/render-introduce.js?v=3";
 import { renderProjects } from "./home-content/render-projects.js?v=3";
 import { setupProjectDialog, closeProjectDialog } from "./home-content/project-dialog.js?v=3";
-import { getHomeContent } from "../data/home-content.js?v=3";
+import { getHomeContent } from "../data/home-content.js?v=4";
 import { getLanguage, setupLanguage, t } from "./i18n.js?v=3";
 import { escapeHtml } from "./home-content/utils.js?v=3";
 

@@ -1,5 +1,5 @@
-import { messages as korean } from "../data/locales/ko.js?v=3";
-import { messages as english } from "../data/locales/en.js?v=3";
+import { messages as korean } from "../data/locales/ko/ko-key.js?v=3";
+import { messages as english } from "../data/locales/en/en-key.js?v=3";
 
 const dictionaries = { ko: korean, en: english };
 const storageKey = "portfolio.language";
