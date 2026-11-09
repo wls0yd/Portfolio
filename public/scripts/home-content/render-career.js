@@ -1,6 +1,6 @@
-import { careerList } from "./dom.js?v=3";
-import { escapeHtml, renderLink } from "./utils.js?v=3";
-import { t } from "../i18n.js?v=3";
+import { careerList } from "./dom.js?v=4";
+import { escapeHtml, renderLink } from "./utils.js?v=4";
+import { t } from "../i18n.js?v=4";
 
 function renderCareerTitle(value) {
   const title = String(value || "");
@@ -36,7 +36,7 @@ function renderTimelineMeta(items) {
         .map(
           (item) => `
             <div>
-              <dt>${escapeHtml(item.label || "")}</dt>
+              <dt class="label">${escapeHtml(item.label || "")}</dt>
               <dd>${escapeHtml(item.value || "")}</dd>
             </div>
           `,
@@ -100,7 +100,7 @@ export function renderCareer(items) {
     .map(
       (item) => `
         <li data-career-id="${escapeHtml(item.id || "")}">
-          <span class="timeline-year">${escapeHtml(item.year || "")}</span>
+          <span class="timeline-year label">${escapeHtml(item.year || "")}</span>
           <div class="timeline-copy">
             <h3>${renderCareerTitle(item.title)}</h3>
             ${item.description ? `<p>${escapeHtml(item.description)}</p>` : ""}

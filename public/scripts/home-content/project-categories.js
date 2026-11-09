@@ -1,4 +1,4 @@
-import { t } from "../i18n.js?v=3";
+import { t } from "../i18n.js?v=4";
 
 export function getProjectCategories() {
   return ["all", "company", "team", "personal"].map((key) => ({

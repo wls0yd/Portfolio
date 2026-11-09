@@ -1,5 +1,5 @@
-import { resetProjectDetailTabs, setupProjectDetailTabs } from "./project-detail-tabs.js";
-import { renderProjectContribution } from "./render-project-contribution.js";
+import { resetProjectDetailTabs, setupProjectDetailTabs } from "./project-detail-tabs.js?v=4";
+import { renderProjectContribution } from "./render-project-contribution.js?v=4";
 import {
   projectDialog,
   projectDialogCloseButton,
@@ -10,9 +10,9 @@ import {
   projectDialogSubtitle,
   projectDialogTags,
   projectDialogTitle,
-} from "./dom.js?v=3";
-import { escapeHtml, renderLink } from "./utils.js?v=3";
-import { getProjectCategoryLabel } from "./project-categories.js?v=3";
+} from "./dom.js?v=4";
+import { escapeHtml, renderLink } from "./utils.js?v=4";
+import { getProjectCategoryLabel } from "./project-categories.js?v=4";
 
 let lastProjectTrigger = null;
 let projectDetailLookup = new Map();

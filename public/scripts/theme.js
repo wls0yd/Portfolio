@@ -15,10 +15,13 @@
   }
 
   function applyTheme() {
-    document.documentElement.dataset.theme =
-      preference === "system"
-        ? systemTheme.matches ? "dark" : "light"
-        : preference;
+    const theme = preference === "system"
+      ? systemTheme.matches ? "dark" : "light"
+      : preference;
+    document.documentElement.dataset.theme = theme;
+    // Tints the mobile browser chrome to match the page background.
+    document.querySelector('meta[name="theme-color"]')
+      ?.setAttribute("content", theme === "dark" ? "#10152b" : "#edf2fa");
 
     switcher?.querySelectorAll('input[name="theme"]').forEach((input) => {
       input.checked = input.value === preference;

@@ -1,4 +1,5 @@
 export const introduceContent = document.querySelector("[data-introduce-content]");
+export const releaseBoard = document.querySelector("[data-release-board]");
 export const projectList = document.querySelector("[data-project-list]");
 export const projectTabs = document.querySelector("[data-project-tabs]");
 export const projectCount = document.querySelector("[data-project-count]");

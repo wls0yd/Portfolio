@@ -1,5 +1,5 @@
-import { escapeHtml } from "./utils.js?v=3";
-import { t } from "../i18n.js?v=3";
+import { escapeHtml } from "./utils.js?v=4";
+import { t } from "../i18n.js?v=4";
 
 // Add detail.contribution per project: { role, scope, tasks: [{ title, work }] }.
 // Missing values remain explicitly marked placeholders until real content is supplied.

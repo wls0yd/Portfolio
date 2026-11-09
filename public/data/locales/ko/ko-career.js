@@ -46,7 +46,7 @@ export const career = {
         "linkLabel": "AR Slope",
         "suffix": "프로젝트 팀장",
         "bullets": [
-          "졸업 프로젝트 ARSlope는 Projects 섹션에서 상세 내용을 확인할 수 있습니다."
+          "졸업 프로젝트 ARSlope는 프로젝트 섹션에서 상세 내용을 확인할 수 있습니다."
         ]
       }
     ]

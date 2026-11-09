@@ -3,17 +3,19 @@
 	margin: 0 auto;
 }
 
+/* Top HUD: one slim row. The canvas color is kept slightly see-through so content scrolling under it stays legible. */
 .topbar {
 	position: sticky;
 	top: 0;
 	z-index: 20;
 	display: flex;
-	min-height: 4.5rem;
+	min-height: 4rem;
 	align-items: center;
-	justify-content: space-between;
-	gap: var(--space-4);
+	gap: var(--space-6);
 	border-bottom: 1px solid var(--color-line);
-	background: var(--color-canvas-raised);
+	background: color-mix(in srgb, var(--color-canvas) 88%, transparent);
+	-webkit-backdrop-filter: blur(12px);
+	backdrop-filter: blur(12px);
 }
 
 .brand,
@@ -27,50 +29,56 @@
 
 .brand {
 	display: inline-flex;
-	min-height: 2.75rem;
+	min-height: var(--control-size);
 	align-items: center;
 	gap: var(--space-2);
-	font-size: var(--type-body-sm);
+	font-size: 0.9375rem;
 	font-weight: 800;
+	letter-spacing: -0.01em;
 	white-space: nowrap;
 }
 
 .brand::before {
-	width: 0.5rem;
-	height: 0.5rem;
+	width: 0.625rem;
+	height: 0.625rem;
 	background: var(--color-accent);
 	content: "";
 }
 
+.brand-context {
+	color: var(--color-subtle);
+	font-weight: 500;
+}
+
 .topnav {
 	display: flex;
-	gap: var(--space-4);
+	gap: var(--space-1);
 	margin-left: auto;
 	color: var(--color-muted);
 	font-size: var(--type-body-sm);
+	font-weight: 500;
 }
 
 .topnav a {
 	display: inline-flex;
-	min-height: 2.75rem;
+	min-height: var(--control-size);
 	align-items: center;
 	justify-content: center;
-	padding: var(--space-2);
+	padding: 0 var(--space-3);
 	border-radius: var(--radius-md);
 	transition: color var(--motion-micro), background-color var(--motion-micro);
 }
 
-.topnav a:hover,
-.topnav a:focus-visible {
+.topnav a:hover {
 	background: var(--color-accent-soft);
-	color: var(--color-accent-bright);
+	color: var(--color-text);
 }
 
 .site-controls {
 	display: flex;
 	flex-shrink: 0;
 	align-items: center;
-	gap: var(--space-3);
+	gap: var(--space-2);
 }
 
 .layout {
@@ -82,15 +90,9 @@
 	scroll-margin-top: var(--space-4);
 }
 
-.section-heading {
-	display: grid;
-	gap: var(--space-2);
-}
-
-.section-heading h2 {
+.section-title {
 	margin: 0;
-	font-size: clamp(1.5rem, 3vw, 1.875rem);
-	line-height: 1.2;
+	font-size: var(--type-h2);
 }
 
 .site-footer {
@@ -98,7 +100,7 @@
 	justify-content: space-between;
 	flex-wrap: wrap;
 	gap: var(--space-2) var(--space-6);
-	padding: var(--space-6) 0;
-	color: var(--color-muted);
+	padding: var(--space-8) 0;
+	color: var(--color-subtle);
 	font-size: var(--type-caption);
 }

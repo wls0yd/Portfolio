@@ -40,21 +40,15 @@
 }
 
 .timeline-year {
-	padding-top: var(--space-1);
 	color: var(--color-accent);
-	font-family: var(--font-mono);
-	font-size: var(--type-overline);
-	font-weight: 800;
-	letter-spacing: 0.08em;
-	line-height: 1.55;
 }
 
 .timeline-copy h3 {
 	display: block;
 	margin: 0;
 	color: var(--color-text);
-	font-size: var(--type-body);
-	line-height: 1.35;
+	font-size: 1.0625rem;
+	line-height: 1.45;
 }
 
 .timeline-title-alias,
@@ -88,10 +82,10 @@
 	align-items: baseline;
 	flex-wrap: wrap;
 	gap: var(--space-3);
-	padding: var(--space-2) var(--space-3);
+	padding: var(--space-1) var(--space-3);
 	border: 1px solid var(--color-line);
 	border-radius: var(--radius-sm);
-	background: var(--color-surface-alt);
+	background: var(--color-surface);
 }
 
 .timeline-meta dt,
@@ -100,12 +94,7 @@
 }
 
 .timeline-meta dt {
-	color: var(--color-accent);
-	font-family: var(--font-mono);
-	font-size: var(--type-overline);
-	font-weight: 800;
-	letter-spacing: 0.08em;
-	text-transform: uppercase;
+	color: var(--color-subtle);
 }
 
 .timeline-meta dd {
@@ -139,17 +128,15 @@
 }
 
 .timeline-link {
-	color: var(--color-accent-bright);
+	color: var(--color-accent);
 	font-weight: 700;
 	text-decoration: underline;
-	text-decoration-color: var(--color-accent-deep);
+	text-decoration-color: currentColor;
 	text-underline-offset: var(--space-1);
 }
 
-.timeline-link:hover,
-.timeline-link:focus-visible {
-	color: var(--color-accent);
-	text-decoration-color: var(--color-accent);
+.timeline-link:hover {
+	color: var(--color-accent-bright);
 }
 
 .timeline-subdetails {
@@ -161,7 +148,7 @@
 }
 
 .timeline-subdetails li::marker {
-	color: var(--color-accent-deep);
+	color: var(--color-accent);
 }
 
 .timeline-subdetails li {
@@ -172,9 +159,15 @@
 	width: fit-content;
 	min-height: 2.75rem;
 	padding-block: var(--space-2);
-	color: var(--color-accent-bright);
+	color: var(--color-accent);
 	font-size: var(--type-body-sm);
+	font-weight: 600;
 	cursor: pointer;
+}
+
+.timeline-extra summary:hover {
+	text-decoration: underline;
+	text-underline-offset: 4px;
 }
 
 .timeline-extra-content {

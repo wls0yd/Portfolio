@@ -1,5 +1,5 @@
-import { messages as korean } from "../data/locales/ko/ko-key.js?v=3";
-import { messages as english } from "../data/locales/en/en-key.js?v=3";
+import { messages as korean } from "../data/locales/ko/ko-key.js?v=4";
+import { messages as english } from "../data/locales/en/en-key.js?v=4";
 
 const dictionaries = { ko: korean, en: english };
 const storageKey = "portfolio.language";
@@ -42,8 +42,8 @@ function translatePage() {
     url.searchParams.set("lang", language);
     link.setAttribute("href", `${url.pathname}${url.search}${url.hash}`);
   });
-  document.querySelectorAll("[data-language-select]").forEach((select) => {
-    select.value = language;
+  document.querySelectorAll("[data-language-option]").forEach((button) => {
+    button.setAttribute("aria-pressed", String(button.dataset.languageOption === language));
   });
 }
 
@@ -55,20 +55,22 @@ export function setupLanguage(renderContent = () => {}) {
     if (status) status.textContent = announce ? t("language.changed") : "";
   }
 
-  document.querySelectorAll("[data-language-select]").forEach((select) => {
-    select.addEventListener("change", () => {
-      if (!isSupported(select.value) || language === select.value) return;
-      language = select.value;
-      try {
-        window.localStorage.setItem(storageKey, language);
-      } catch {
-        // Keep this visit functional even when the preference cannot be saved.
-      }
-      const url = new URL(window.location.href);
-      url.searchParams.set("lang", language);
-      window.history.replaceState(window.history.state, "", url);
-      refresh(true);
-    });
+  function switchLanguage(nextLanguage) {
+    if (!isSupported(nextLanguage) || language === nextLanguage) return;
+    language = nextLanguage;
+    try {
+      window.localStorage.setItem(storageKey, language);
+    } catch {
+      // Keep this visit functional even when the preference cannot be saved.
+    }
+    const url = new URL(window.location.href);
+    url.searchParams.set("lang", language);
+    window.history.replaceState(window.history.state, "", url);
+    refresh(true);
+  }
+
+  document.querySelectorAll("[data-language-option]").forEach((button) => {
+    button.addEventListener("click", () => switchLanguage(button.dataset.languageOption));
   });
 
   window.addEventListener("popstate", () => {

@@ -1,9 +1,9 @@
-import { projectList, projectTabs, projectCount, projectStatus } from "./dom.js?v=3";
-import { bindProjectTriggers, setProjectDetailLookup } from "./project-dialog.js?v=3";
-import { getProjectCategories, getProjectCategory } from "./project-categories.js?v=3";
-import { renderProjectCard } from "./render-project-card.js?v=3";
-import { escapeHtml } from "./utils.js?v=3";
-import { t } from "../i18n.js?v=3";
+import { projectList, projectTabs, projectCount, projectStatus } from "./dom.js?v=4";
+import { bindProjectTriggers, setProjectDetailLookup } from "./project-dialog.js?v=4";
+import { getProjectCategories, getProjectCategory } from "./project-categories.js?v=4";
+import { renderProjectCard } from "./render-project-card.js?v=4";
+import { escapeHtml } from "./utils.js?v=4";
+import { t } from "../i18n.js?v=4";
 
 let renderedProjectItems = [];
 let projectHandlersBound = false;
@@ -100,7 +100,7 @@ export function renderProjects(items, { revealHash = true } = {}) {
     <button class="project-tab" id="project-tab-${category.key}" type="button" role="tab"
       aria-selected="${category.key === "all"}" aria-controls="project-panel" tabindex="${category.key === "all" ? "0" : "-1"}"
       data-project-tab="${category.key}">
-      <span>${escapeHtml(category.title)}</span><span class="project-tab-count">${getCategoryItems(category.key).length}</span>
+      <span>${escapeHtml(category.title)}</span><span class="project-tab-count label">${getCategoryItems(category.key).length}</span>
     </button>
   `).join("");
 

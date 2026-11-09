@@ -14,58 +14,57 @@
 
 .project-dialog {
 	--dialog-padding: clamp(var(--space-6), 4vw, var(--space-10));
+	position: relative;
 	display: flex;
 	flex-direction: column;
-	position: relative;
 	width: min(47.5rem, 100%);
-	max-height: min(84dvh, 54rem);
+	max-height: min(86dvh, 56rem);
 	overflow: hidden;
 	border: 1px solid var(--color-line-strong);
+	border-top: 3px solid var(--color-accent);
 	border-radius: var(--radius-lg);
 	background: var(--color-surface-elevated);
 	box-shadow: var(--shadow-floating);
 }
 
+/* The close button floats in the corner instead of taking a whole toolbar row. */
 .project-dialog-toolbar {
-	flex-shrink: 0;
-	display: flex;
-	justify-content: flex-end;
-	padding: var(--space-3) var(--space-3) var(--space-2);
-	border-bottom: 1px solid var(--color-line);
+	position: absolute;
+	top: var(--space-3);
+	right: var(--space-3);
+	z-index: 1;
 }
 
 .project-dialog-body {
 	min-height: 0;
 	overflow-y: auto;
 	overscroll-behavior: contain;
-	padding: var(--space-5) var(--dialog-padding) var(--dialog-padding);
+	padding: var(--dialog-padding);
 	scroll-padding-block: var(--space-4);
 }
 
 .project-dialog-close {
 	display: grid;
-	width: 2.75rem;
-	height: 2.75rem;
+	width: var(--control-size);
+	height: var(--control-size);
 	place-items: center;
-	flex-shrink: 0;
-	border: 1px solid var(--color-line-strong);
+	padding: 0;
+	border: 1px solid var(--color-line);
 	border-radius: var(--radius-md);
-	background: var(--color-canvas-raised);
-	color: var(--color-text);
-	font-size: var(--type-h3);
+	background: var(--color-surface-elevated);
+	color: var(--color-muted);
 	cursor: pointer;
-	transition:
-		background-color var(--motion-micro),
-		border-color var(--motion-micro),
-		color var(--motion-micro),
-		transform var(--motion-micro);
+	transition: border-color var(--motion-micro), color var(--motion-micro);
 }
 
-.project-dialog-close:hover,
-.project-dialog-close:focus-visible {
-	border-color: var(--color-accent);
-	background: var(--color-accent-soft);
-	color: var(--color-accent-bright);
+.project-dialog-close svg {
+	width: 1.125rem;
+	height: 1.125rem;
+}
+
+.project-dialog-close:hover {
+	border-color: var(--color-line-strong);
+	color: var(--color-text);
 }
 
 .project-dialog-close:active {
@@ -73,17 +72,14 @@
 }
 
 .project-dialog-index {
-	margin-bottom: var(--space-2);
+	margin: 0 var(--space-12) var(--space-2) 0;
 	color: var(--color-accent);
-	font-family: var(--font-mono);
-	font-size: var(--type-overline);
-	font-weight: 800;
-	letter-spacing: 0.14em;
 }
 
 .project-dialog h3 {
 	max-width: 18ch;
 	margin-bottom: var(--space-3);
+	font-size: var(--type-h1);
 	overflow-wrap: anywhere;
 }
 
@@ -97,11 +93,13 @@
 }
 
 .project-dialog-tags li {
-	padding: var(--space-1) var(--space-2);
-	border: 1px solid var(--color-line-strong);
+	padding: 0 var(--space-2);
+	border: 1px solid var(--color-line);
 	border-radius: var(--radius-sm);
 	color: var(--color-muted);
 	font-size: var(--type-caption);
+	font-weight: 600;
+	line-height: 1.75rem;
 }
 
 .project-dialog-link {
@@ -110,19 +108,19 @@
 	align-items: center;
 	justify-content: center;
 	padding: var(--space-2) var(--space-3);
-	border: 1px solid var(--color-line-strong);
+	border: 1px solid var(--color-line);
 	border-radius: var(--radius-md);
-	background: var(--color-canvas-raised);
+	background: var(--color-surface);
 	color: var(--color-text);
 	font-size: var(--type-body-sm);
 	font-weight: 700;
 	text-align: center;
+	transition: border-color var(--motion-micro), color var(--motion-micro);
 }
 
-.project-dialog-link:hover,
-.project-dialog-link:focus-visible {
+.project-dialog-link:hover {
 	border-color: var(--color-accent);
-	color: var(--color-accent-bright);
+	color: var(--color-accent);
 }
 
 .project-dialog-subtitle,
@@ -150,6 +148,7 @@
 	padding-left: var(--space-5);
 	color: var(--color-muted);
 	line-height: 1.72;
+	list-style: square;
 	overflow-wrap: anywhere;
 	text-wrap: pretty;
 	word-break: keep-all;
@@ -167,7 +166,7 @@
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
 	gap: var(--space-2);
-	margin-top: var(--space-6);
+	margin-top: var(--space-8);
 }
 
 .project-dialog-subtitle[hidden],

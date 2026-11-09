@@ -41,7 +41,7 @@ export const projects = {
     }
   },
   "catgirl-survivor-1": {
-    "description": "A Vampire Survivors-style 2D pixel-art action game developed with Unity and C#.",
+    "description": "A Vampire Survivors-style 2D pixel-art action game built with Unity and C#, released on PC and consoles.",
     "cardImage": {
       "alt": "CatGirlSurvivor1 project cover"
     },
@@ -76,13 +76,13 @@ export const projects = {
           }
         ]
       },
-      "overview": "A company project developing a Vampire Survivors-style 2D pixel-art action game in Unity and C#. Seven catgirl characters and combinable skill builds create different combat experiences on each run. The project combines accessible controls with deep progression and is being released across PC and consoles.",
+      "overview": "A company project: a Vampire Survivors-style 2D pixel-art action game built with Unity and C#. Seven catgirl characters and combinable skill builds create different combat experiences on each run. It pairs accessible controls with deep progression and was released on PC, PS5, Nintendo Switch, and Xbox.",
       "highlights": [
         "Fight waves of enemies with seven distinct catgirl characters in a Vampire Survivors-style 2D pixel-art action game.",
         "Combine skills into different builds to discover new combat strategies across repeated runs.",
         "Automatic attacks let players focus on movement and skill selection, pairing accessible controls with depth in skill combinations and progression.",
         "Level characters up to 1,000 and upgrade equipment for long-term progression.",
-        "The project continues to expand with varied stages, boss battles, and platform-specific support for PC and consoles."
+        "Released on PC and consoles, with varied stages, boss battles, and platform-specific support."
       ]
     },
     "category": {
